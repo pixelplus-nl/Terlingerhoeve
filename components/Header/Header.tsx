@@ -1,13 +1,12 @@
 "use client";
-import React, { useState } from "react"; // Import useState
+import React, { useState } from "react";
 import Image from "next/image";
 import { Squash as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 
 export default function Header() {
-  const [isAnimating, setIsAnimating] = useState(false); // Create state for animation
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  // Function to toggle animation state
   const toggleAnimation = () => {
     setIsAnimating(!isAnimating);
   };
@@ -38,19 +37,28 @@ export default function Header() {
         />
       </div>
 
-      <div className="relative flex justify-center items-center">
-        {isAnimating && ( // Conditionally render animation
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 500 }}
-            transition={{ duration: 1 }}
-            className="bg-lightGreen fixed rounded-full w-1 h-1"
-          />
+      <div className="flex justify-center items-center">
+        {isAnimating && (
+          <>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 15 }}
+              transition={{ duration: 1.3, ease: "easeIn" }}
+              className="bg-lightGreen fixed rounded-full w-1 h-1 p-16"
+            />
+            <div className="absolute flex justify-center items-center top-0 w-full h-full z-20 left-0">
+              <div>
+                <ul>
+                  <li>test1</li>
+                  <li>test1</li>
+                  <li>test1</li>
+                </ul>
+              </div>
+            </div>
+          </>
         )}
         <div className="bg-darkBeige relative z-20 md:bg-transparant w-12 h-12 flex justify-center items-center rounded-full">
           <button onClick={toggleAnimation}>
-            {" "}
-            {/* Attach onClick event handler */}
             <Hamburger size={23} />
           </button>
         </div>
