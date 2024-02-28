@@ -13,4 +13,5 @@ export const getHomePage = cache(async () => {
   }
 }`
   );
+  return data;
 });
