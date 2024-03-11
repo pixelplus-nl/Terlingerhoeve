@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        bricolage: ["var(--font-bricolage)"],
+        spartan: ["var(--font-spartan)"],
+      },
+
       keyframes: {
         slideDown: {
           from: { height: "0", opacity: "0" },

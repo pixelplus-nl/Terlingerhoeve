@@ -14,10 +14,8 @@ export default function Header(props: any) {
     setIsopen(!isOpen);
   };
 
-  console.log(props.menuItems);
-
   return (
-    <header className="flex p-3 justify-between items-center max-w-[90rem] m-auto">
+    <header className="flex p-3 md:px-0 md:py-5 z-50 relative justify-between items-center max-w-[90rem] m-auto">
       <div className="bg-darkBeige w-12 h-12 flex justify-center items-center rounded-full md:hidden">
         <Image
           src="/callIcon.svg"
@@ -28,14 +26,16 @@ export default function Header(props: any) {
         />
       </div>
 
-      <button className="hidden md:flex gap-1 items-center group [&>span]:hover:translate-x-1 transition duration-800 ease-out">
-        <p className="inline-block h-6 lg:h-7 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer">
-          Reserveer online
-        </p>
-        <span className="transition-all">
-          <MdArrowRightAlt size={25} />
-        </span>
-      </button>
+      <div className="md:w-40 w-auto hidden md:block">
+        <button className="flex gap-1 items-center group [&>span]:hover:translate-x-1 transition duration-800 ease-out">
+          <p className="inline-block h-6 lg:h-7 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer">
+            Reserveer online
+          </p>
+          <span className="transition-all">
+            <MdArrowRightAlt size={25} />
+          </span>
+        </button>
+      </div>
 
       <div className="w-52 md:w-64">
         <Image
@@ -56,7 +56,8 @@ export default function Header(props: any) {
               transition={{ duration: 1, ease: "easeIn" }}
               className="bg-lightGreen fixed rounded-full w-1 h-1 p-16 md:p-40"
             />
-            <div className="absolute top-16 z-20 pb-5 left-5 md:top-0 md:left-0 md:w-full md:flex-row-reverse md:gap-20 md:h-full md:flex md:justify-center md:items-center text-[#fff]">
+
+            <div className="absolute top-16 z-20 pb-5 left-5 md:top-0 md:left-0  md:flex-row-reverse md:gap-20 md:w-screen md:h-screen  md:flex md:justify-center md:items-center text-[#fff]">
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -125,15 +126,17 @@ export default function Header(props: any) {
             </div>
           </>
         )}
-        <div
-          className={` relative z-20 ${
-            isOpen ? "md:bg-lightGreen" : "md:bg-beige"
-          } w-12 h-12 flex justify-center items-center rounded-full ${
-            isOpen ? "bg-darkGreen/25" : "bg-darkBeige"
-          }`}>
-          <button onClick={toggleAnimation}>
-            <Hamburger color={`${isOpen ? "#fff" : "#B55A45"}`} size={23} />
-          </button>
+        <div className="md:w-40 flex justify-end w-auto">
+          <div
+            className={`relative z-20 ${
+              isOpen ? "md:bg-lightGreen" : "md:bg-beige"
+            } w-12 h-12 flex justify-center items-center rounded-full ${
+              isOpen ? "bg-darkGreen/25" : "bg-darkBeige"
+            }`}>
+            <button onClick={toggleAnimation}>
+              <Hamburger color={`${isOpen ? "#fff" : "#B55A45"}`} size={23} />
+            </button>
+          </div>
         </div>
       </div>
     </header>

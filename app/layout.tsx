@@ -1,10 +1,35 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import HeaderBase from "@/components/Header/HeaderBase";
 import Footer from "@/components/Footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const bricolage = localFont({
+  src: [
+    {
+      path: "./fonts/Bricolage/BricolageGrotesque-Medium.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Bricolage/BricolageGrotesque-Regular.woff2",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+  variable: "--font-bricolage",
+});
+
+const spartan = localFont({
+  src: [
+    {
+      path: "./fonts/Spartan/LeagueSpartan-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-spartan",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +43,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-beige text-brown`}>
+      <body
+        className={`${bricolage.variable} ${spartan.variable} font-bricolage bg-beige text-brown md:px-5 lg:px-10`}>
         <HeaderBase />
         {children}
         <Footer />

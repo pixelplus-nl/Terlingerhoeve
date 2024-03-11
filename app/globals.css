@@ -9,3 +9,25 @@
 .AccordionTrigger[data-state="open"] > .AccordionChevron {
   transform: rotate(45deg);
 }
+
+.mask1 {
+  -webkit-mask-image: url(../public/Shapes/ThShape.svg);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.innerHtmlStyle a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.innerHtmlStyle a:hover {
+  text-decoration: none;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
