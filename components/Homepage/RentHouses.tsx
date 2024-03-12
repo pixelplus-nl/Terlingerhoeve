@@ -8,21 +8,19 @@ export default function RentHouses(props: any) {
       </h2>
       <div className="sm:flex flex-col md:flex-row md:gap-10 lg:gap-10 items-center md:items-end justify-center">
         <div className="mask1 relative sm:w-[70%] sm:pt-[66%] w-full pt-[94%] md:pt-[50%] lg:pt-[40%] max-w-[36rem]">
-          <div className="absolute top-0 left-0 w-full h-full">
-            <Image
-              src={`${props.homepageData.home.image.sourceUrl}`}
-              fill
-              placeholder="blur"
-              blurDataURL="data:..."
-              priority
-              sizes="100vw"
-              style={{
-                objectFit: "cover",
-                zIndex: -1,
-              }}
-              alt={""}
-            />
-          </div>
+          <Image
+            src={`${props.homepageData.home.image.sourceUrl}`}
+            fill
+            placeholder="blur"
+            blurDataURL="data:..."
+            priority
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+              zIndex: -1,
+            }}
+            alt={""}
+          />
         </div>
 
         <div className="mt-10 md:mt-0 max-w-xs  flex flex-col justify-end">
