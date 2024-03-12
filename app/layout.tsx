@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bricolage.variable} ${spartan.variable} font-bricolage bg-beige text-brown md:px-5 lg:px-10`}>
+        className={`${bricolage.variable} ${spartan.variable} font-bricolage bg-beige text-brown`}>
         <HeaderBase />
         {children}
         <Footer />

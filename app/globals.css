@@ -15,6 +15,28 @@
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
+  mask-image: url(../public/Shapes/ThShape.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.mask2 {
+  -webkit-mask-image: url(../public/Shapes/FullWidthBgMask.svg);
+  -webkit-mask-size: cover;
+  -webkit-mask-position: center;
+  mask-image: url(../public/Shapes/FullWidthBgMask.svg);
+  mask-size: cover;
+  mask-position: center;
+}
+
+@media (min-width: 1280px) {
+  .mask2 {
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+  }
 }
 
 .innerHtmlStyle a {
@@ -30,4 +52,16 @@
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.swiper-pagination {
+  position: relative !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #b55a45 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #b55a45 !important;
 }

@@ -13,6 +13,12 @@ export const getHomePage = cache(async () => {
           image {
             sourceUrl
           }
+          uspstepone
+          uspsteptwo
+          uspstepthree
+					reviews{
+            review
+          }
         }
       }
     }

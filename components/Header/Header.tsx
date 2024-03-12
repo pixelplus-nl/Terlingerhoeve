@@ -15,7 +15,7 @@ export default function Header(props: any) {
   };
 
   return (
-    <header className="flex p-3 md:px-0 md:py-5 z-50 relative justify-between items-center max-w-[90rem] m-auto">
+    <header className="flex p-3 md:py-5 z-50 relative justify-between items-center max-w-[90rem] px-5 md:px-10 2xl:px-0 m-auto">
       <div className="bg-darkBeige w-12 h-12 flex justify-center items-center rounded-full md:hidden">
         <Image
           src="/callIcon.svg"
