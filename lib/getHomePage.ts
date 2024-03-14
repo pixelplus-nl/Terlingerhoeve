@@ -18,6 +18,7 @@ export const getHomePage = cache(async () => {
           uspstepthree
 					reviews{
             review
+            reviewer
           }
         }
       }

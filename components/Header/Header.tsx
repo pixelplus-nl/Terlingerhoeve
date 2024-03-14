@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Squash as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
@@ -14,11 +14,19 @@ export default function Header(props: any) {
     setIsopen(!isOpen);
   };
 
+  useEffect(() => {
+    if (isOpen === true) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
+
   return (
-    <header className="flex p-3 md:py-5 z-50 relative justify-between items-center max-w-[90rem] px-5 md:px-10 2xl:px-0 m-auto">
+    <header className="flex p-3 md:py-5 z-50  relative justify-between items-center max-w-[90rem] px-5 md:px-10 2xl:px-0 m-auto">
       <div className="bg-darkBeige w-12 h-12 flex justify-center items-center rounded-full md:hidden">
         <Image
-          src="/callIcon.svg"
+          src="/Header/callIcon.svg"
           width={25}
           height={25}
           alt="Bel icoon"
@@ -39,7 +47,7 @@ export default function Header(props: any) {
 
       <div className="w-52 md:w-64">
         <Image
-          src="/logoTerlingerhoeve.svg"
+          src="/Header/logoTerlingerhoeve.svg"
           width={500}
           height={500}
           alt="Logo terlingerhoeve"
@@ -57,7 +65,7 @@ export default function Header(props: any) {
               className="bg-lightGreen fixed rounded-full w-1 h-1 p-16 md:p-40"
             />
 
-            <div className="absolute top-16 z-20 pb-5 left-5 md:top-0 md:left-0  md:flex-row-reverse md:gap-20 md:w-screen md:h-screen  md:flex md:justify-center md:items-center text-[#fff]">
+            <div className="absolute top-14 overflow-y-scroll h-screen overflow-x-hidden z-20  left-5 md:top-0 md:left-0  md:flex-row-reverse md:gap-10 lg:gap-20 md:w-screen md:h-screen  md:flex md:justify-center md:items-center text-[#fff]">
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -65,7 +73,6 @@ export default function Header(props: any) {
                 <ul>
                   <Accordion.Root className="w-full" type="single" collapsible>
                     {props.menuItems.map((item: any, index: number) => {
-                      console.log(item.items);
                       return (
                         <Accordion.Item
                           value={`item-${index}`}
@@ -73,7 +80,7 @@ export default function Header(props: any) {
                           <li key={index}>
                             <Accordion.Header>
                               <Accordion.Trigger className="w-full AccordionTrigger flex gap-28 md:gap-40 justify-between items-center">
-                                <p className="text-3xl md:text-4xl">
+                                <p className="text-3xl lg:text-4xl">
                                   {item.label}
                                 </p>
                                 <BsPlusLg
@@ -120,7 +127,7 @@ export default function Header(props: any) {
                   height={400}
                   alt="Mobile menu image"
                   title="Mobile menu image"
-                  className="w-72 md:w-[30rem]"
+                  className="w-72 md:w-80 lg:w-[30rem]"
                 />
               </motion.div>
             </div>
