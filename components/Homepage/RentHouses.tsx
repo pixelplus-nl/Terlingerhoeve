@@ -6,7 +6,7 @@ import UspSlider from "./UspSlider";
 export default function RentHouses(props: any) {
   return (
     <>
-      <div className="md:px-10 flex flex-col gap-5 md:gap-10 mt-20 lg:mt-24">
+      <div className="md:px-10 flex flex-col gap-5 md:gap-10 mt-20 lg:mt-32">
         <h2 className="font-spartan text-3xl md:text-4xl lg:text-5xl max-w-2xl mx-auto uppercase text-center">
           Een ontspannen verblijf in een prachtige omgeving
         </h2>

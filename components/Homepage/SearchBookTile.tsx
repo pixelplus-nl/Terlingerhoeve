@@ -9,7 +9,7 @@ export default function SearchBookTile() {
           Zoek & boek je
           <br className="hidden lg:block" /> vakantiewoning
         </h2>
-        <div className="grid grid-cols-2 lg:grid-rows-1 lg:grid-cols-4 grid-rows-2 gap-3 mt-3 lg:mt-0">
+        <div className="grid grid-cols-2 max-w-sm lg:max-w-none mx-auto lg:grid-rows-1 lg:grid-cols-4 grid-rows-2 gap-3 mt-3 lg:mt-0">
           <div>
             <SearchBookDropdown label="Aankomst" />
           </div>
@@ -25,7 +25,7 @@ export default function SearchBookTile() {
         </div>
         <div>
           <Link
-            className="bg-[#A0AE9C] flex items-center gap-2 w-fit m-auto mt-5 lg:mt-0 rounded-full p-3 py-5 xl:px-5   text-[#fff]"
+            className="bg-[#A0AE9C] flex items-center gap-2 w-fit m-auto mt-5 lg:mt-0 rounded-full  p-5   text-[#fff]"
             href="">
             Zoek & boek <span className="text-xl">→</span>
           </Link>

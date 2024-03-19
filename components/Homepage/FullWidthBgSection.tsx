@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function FullWidthBgSection() {
   return (
-    <div className="relative my-20">
+    <div className="relative my-20 lg:my-32">
       <div className="mask2 relative w-full h-[40rem] md:h-[50rem] xl:h-[46rem] 2xl:h-[50rem]">
         <Image
           src="/fullWidthBgImage.jpg"
@@ -28,7 +28,9 @@ export default function FullWidthBgSection() {
           <p className="drop-shadow-md text-center text-lg md:text-xl lg:text-2xl">
             Een Nederlands stukje buitenland
           </p>
-          <Link href="" className="bg-[#556A76] mx-auto p-3 lg:px-5 text-sm md:text-md lg:text-lg rounded-full">
+          <Link
+            href=""
+            className="bg-[#556A76] mx-auto p-3 lg:px-5 text-sm md:text-md lg:text-lg rounded-full">
             Wat is er te doen? →
           </Link>
         </div>

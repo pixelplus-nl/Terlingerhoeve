@@ -23,7 +23,7 @@ export default function Reviews(props: any) {
   }, []);
 
   return (
-    <div className="my-20 max-w-lg mx-auto font-medium">
+    <div className="my-20 lg:my-32 max-w-lg mx-auto font-medium">
       <h2 className="font-spartan mb-5 text-3xl md:text-4xl lg:text-5xl max-w-2xl mx-auto uppercase text-center">
         Ervaar het zelf
       </h2>
