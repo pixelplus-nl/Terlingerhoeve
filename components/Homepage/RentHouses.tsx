@@ -11,7 +11,7 @@ export default function RentHouses(props: any) {
           Een ontspannen verblijf in een prachtige omgeving
         </h2>
         <div className="sm:flex flex-col md:flex-row md:gap-10 lg:gap-10 items-center md:items-end justify-center">
-          <div className="mask1 relative sm:w-[70%] sm:pt-[66%] w-full pt-[94%] md:pt-[50%] lg:pt-[40%] max-w-[36rem]">
+          <div className="mask1 relative sm:w-[70%] sm:pt-[66%] w-full pt-[94%] md:pt-[50%] lg:pt-[45%] xl:pt-[40%] max-w-[36rem]">
             <Image
               src={`${props.homepageData.home.image.sourceUrl}`}
               fill
@@ -27,9 +27,9 @@ export default function RentHouses(props: any) {
             />
           </div>
 
-          <div className="mt-10 md:mt-0 max-w-xs  flex flex-col justify-end">
+          <div className="mt-10 md:mt-0 max-w-xs xl:max-w-sm  flex flex-col justify-end">
             <div
-              className="text-lg font-medium innerHtmlStyle"
+              className=" md:text-base lg:text-lg font-medium innerHtmlStyle"
               dangerouslySetInnerHTML={{
                 __html: props.homepageData.home.paragraph,
               }}
@@ -49,10 +49,12 @@ export default function RentHouses(props: any) {
             <div className="w-7 h-7  flex justify-center items-center rounded-full bg-[#D3DBCA]">
               <HiMiniCheck size={15} color="#6B7969" />
             </div>
-            <Link className="underline hover:no-underline" href="">
-              Boek hier
-            </Link>{" "}
-            voor de laagste prijs
+            <div>
+              <Link className="underline hover:no-underline" href="">
+                Boek hier
+              </Link>{" "}
+              <span>voor de laagste prijs</span>
+            </div>
           </div>
           <div className="flex gap-2 pb-7 text-[#556A76] items-center justify-center">
             <div className="w-7 h-7  flex justify-center items-center rounded-full bg-[#D3DBCA]">

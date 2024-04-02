@@ -13,12 +13,14 @@ export default async function Home() {
     <div>
       <div className="max-w-[90rem] m-auto px-5 md:px-10 2xl:px-0">
         <Hero />
-        <SearchBookTile />
+        <div className="md:-mt-10 lg:-mt-[3.5rem] max-w-6xl mx-auto">
+          <SearchBookTile />
+        </div>
         <RentHouses homepageData={homepageData} />
       </div>
       <FullWidthBgSection />
       <div className="max-w-[90rem] m-auto px-5 md:px-10 2xl:px-0">
-        <UspSteps homepageData={homepageData}  />
+        <UspSteps homepageData={homepageData} />
         <Reviews homepageData={homepageData} />
       </div>
     </div>

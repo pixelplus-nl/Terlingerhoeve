@@ -34,7 +34,7 @@ export default function page() {
         </div>
       </div>
 
-      <div className="shadow-[0px_0px_20px_5px_#00000015] max-w-2xl md:mx-auto mx-5 rounded-3xl py-10 px-5 mt-10">
+      <div className="shadow-[0px_0px_20px_5px_#00000015] max-w-2xl md:mx-auto mx-5 rounded-3xl py-10 px-5 mt-16">
         <h2 className="uppercase font-spartan text-3xl text-center mb-5">
           Stel je vraag
         </h2>

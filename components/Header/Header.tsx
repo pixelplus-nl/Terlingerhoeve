@@ -65,7 +65,7 @@ export default function Header(props: any) {
               className="bg-lightGreen fixed rounded-full w-1 h-1 p-16 md:p-40"
             />
 
-            <div className="absolute top-14 overflow-y-scroll h-screen overflow-x-hidden z-20  left-5 md:top-0 md:left-0  md:flex-row-reverse md:gap-10 lg:gap-20 md:w-screen md:h-screen  md:flex md:justify-center md:items-center text-[#fff]">
+            <div className="absolute top-14 overflow-y-scroll h-screen overflow-x-hidden z-20  left-5 md:top-0 md:left-0  md:flex-row-reverse md:gap-10 lg:gap-20 md:w-full md:h-screen  md:flex md:justify-center md:items-center text-[#fff]">
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}

@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function FullWidthBgSection() {
   return (
     <div className="relative my-20 lg:my-32">
-      <div className="mask2 relative w-full h-[40rem] md:h-[50rem] xl:h-[46rem] 2xl:h-[50rem]">
+      <div className="mask2 relative w-full h-[40rem] md:h-[50rem] xl:h-[46rem] 2xl:h-[49rem]">
         <Image
           src="/fullWidthBgImage.jpg"
           fill

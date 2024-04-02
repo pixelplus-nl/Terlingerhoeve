@@ -59,6 +59,7 @@ module.exports = {
       brown: "#B55A45",
       lightGreen: "#A0AE9C",
       darkGreen: "#6B7969",
+      blue: "#556A76",
     },
   },
   plugins: [require("tailwindcss-radix")()],
