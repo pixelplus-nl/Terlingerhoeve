@@ -21,8 +21,8 @@ export default async function page() {
           naar de ligging? <br className="md:hidden" />
           <Link
             className="group ease-out duration-700"
-            href="/vakantiewoningen-op-de-kaart">
-            <span className="inline-block h-5 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:100%_2px] bg-no-repeat group-hover:bg-[length:0%_2px] transition-all duration-500 ease-out cursor-pointer">
+            href="/de-vakantiewoningen/vakantiewoningen-op-de-kaart">
+            <span className="inline-block h-5 bg-left-bottom bg-gradient-to-r from-brown/50 to-brown/50 bg-[length:100%_2px] bg-no-repeat group-hover:bg-[length:0%_2px] transition-all duration-500 ease-out cursor-pointer">
               Bekijk ze op de kaart →
             </span>
           </Link>

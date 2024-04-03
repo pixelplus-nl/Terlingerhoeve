@@ -11,8 +11,8 @@ const corinthia = Corinthia({
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="flex justify-center gap-5 overflow-hidden">
+    <footer className="bg-beige z-20 relative">
+      <div className="flex justify-center gap-5 bg-beige overflow-hidden">
         <Image
           src="/Footer/FooterImgOne.png"
           width={500}

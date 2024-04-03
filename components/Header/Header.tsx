@@ -122,7 +122,7 @@ export default function Header(props: any) {
                 transition={{ duration: 0.5, delay: 1.5 }}
                 className="flex justify-center mt-5 md:mt-0">
                 <Image
-                  src="/MenuImg.png"
+                  src="/Header/MenuImg.png"
                   width={400}
                   height={400}
                   alt="Mobile menu image"
