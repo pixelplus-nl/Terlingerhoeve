@@ -76,8 +76,9 @@ export default function Header(props: any) {
                       return (
                         <Accordion.Item
                           value={`item-${index}`}
-                          className="pb-4">
-                          <li key={index}>
+                          className="pb-4"
+                          key={index}>
+                          <li>
                             <Accordion.Header>
                               <Accordion.Trigger className="w-full AccordionTrigger flex gap-28 md:gap-40 justify-between items-center">
                                 <p className="text-3xl lg:text-4xl">
