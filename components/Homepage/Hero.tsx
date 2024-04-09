@@ -29,9 +29,12 @@ export default function Hero() {
           />
           <div className="text-[#fff] absolute text-center">
             <div className="max-w-[15rem] mt-14">
-              <h1 className="text-3xl lg:text-4xl font-spartan">LEKKER SAMEN EVEN WEG?</h1>
+              <h1 className="text-3xl lg:text-4xl font-spartan">
+                LEKKER SAMEN EVEN WEG?
+              </h1>
               <h2 className="text-lg mt-3">
-                Op ons landgoed in Zuid-Limburg ben je er écht even tussenuit
+                Op ons landgoed in
+                <br /> Zuid-Limburg ben je er écht even tussenuit
               </h2>
             </div>
           </div>

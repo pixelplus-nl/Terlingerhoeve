@@ -82,14 +82,14 @@ export default async function page({ params }: PageProps) {
             return (
               <React.Fragment key={index}>
                 {block.fontSize === "big" ? (
-                  <div className="py-5 text-2xl md:px-0 px-3 max-w-4xl mx-auto font-thin flex justify-center w-full">
+                  <div className="py-5 text-2xl md:px-0 px-3 max-w-2xl mx-auto font-thin flex justify-center w-full">
                     <div
                       dangerouslySetInnerHTML={{
                         __html: block.paragraph,
                       }}></div>
                   </div>
                 ) : (
-                  <div className="py-5 md:px-0 px-3 max-w-4xl mx-auto flex justify-center w-full">
+                  <div className="py-5 md:px-0 px-3 max-w-2xl mx-auto flex justify-center w-full">
                     <div
                       dangerouslySetInnerHTML={{
                         __html: block.paragraph,

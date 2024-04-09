@@ -30,7 +30,7 @@ export default function Faq(props: any) {
         return (
           <div
             key={index}
-            className="shadow-xl overflow-hidden relative border-brown/20 border-[1px] rounded-xl p-5">
+            className="overflow-hidden relative border-brown/20 border-[1px] rounded-xl p-5">
             <button
               onClick={() => toggleItem(index)}
               className="flex w-full text-left gap-5 items-center justify-between">

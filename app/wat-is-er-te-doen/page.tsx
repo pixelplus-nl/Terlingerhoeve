@@ -13,7 +13,7 @@ export default async function page() {
           {sightsData.page.title}
         </h1>
         <div
-          className="text-center"
+          className="text-center text-xl"
           dangerouslySetInnerHTML={{
             __html: sightsData.page.sightsGraph.description,
           }}
@@ -48,7 +48,7 @@ export default async function page() {
                 <h2 className="text-2xl md:text-3xl font-spartan uppercase lg:text-4xl">
                   {sight.title}
                 </h2>
-                <p className="max-w-xs mt-3 mx-auto">{sight.description}</p>
+                <p className="max-w-xs text-lg mt-3 mx-auto">{sight.description}</p>
               </div>
             </Link>
           );

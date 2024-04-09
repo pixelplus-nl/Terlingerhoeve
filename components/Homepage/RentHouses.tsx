@@ -29,7 +29,7 @@ export default function RentHouses(props: any) {
 
           <div className="mt-10 md:mt-0 max-w-xs xl:max-w-sm  flex flex-col justify-end">
             <div
-              className=" md:text-base lg:text-lg font-medium innerHtmlStyle"
+              className=" md:text-base lg:text-2xl font-medium innerHtmlStyle"
               dangerouslySetInnerHTML={{
                 __html: props.homepageData.home.paragraph,
               }}
