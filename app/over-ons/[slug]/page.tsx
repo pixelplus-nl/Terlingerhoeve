@@ -17,9 +17,8 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const getData = await getDetailPageContent(params.slug);
-  getData.page === null ? redirect("/wat-is-er-te-doen") : "";
+  getData.page === null ? redirect("/404") : "";
   const post = getData.page.seo;
-
   return {
     title: post.title,
     description: post.metaDesc,
@@ -27,7 +26,7 @@ export async function generateMetadata({
 }
 
 export default async function page({ params }: PageProps) {
-  const nav = await getDetailPageNav("cG9zdDo4OQ==");
+  const nav = await getDetailPageNav("cG9zdDoxMDk");
   const data = await getDetailPageContent(params.slug);
 
   return (

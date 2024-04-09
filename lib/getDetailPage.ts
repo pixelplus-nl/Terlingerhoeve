@@ -1,36 +1,7 @@
 import { fetchAPI } from "./base";
 import { cache } from "react";
 
-export const getSightsPage = cache(async () => {
-  const data = await fetchAPI(
-    `query Page {
-  page(id: "17", idType: DATABASE_ID) {
-    sightsGraph {
-      description
-      sights {
-        ... on Page_Sightsgraph_Sights_Sight {
-          title
-          buttonText
-          description
-          featuredImage {
-            sourceUrl
-          }
-          link {
-            ... on Page {
-              uri
-            }
-          }
-        }
-      }
-    }
-    title
-  }
-}`
-  );
-  return data;
-});
-
-export const getSightsPageDetail = cache(async (uri: string) => {
+export const getDetailPageContent = cache(async (uri: string) => {
   const data = await fetchAPI(
     `query Page {
   page(id: "${uri}", idType: URI) {
@@ -84,11 +55,11 @@ export const getSightsPageDetail = cache(async (uri: string) => {
   return data;
 });
 
-export const getSightsPageNav = cache(async () => {
+export const getDetailPageNav = cache(async (navId: string) => {
   const data = await fetchAPI(
     `query Menu {
   menu(id: "dGVybToz") {
-    menuItems(first: 100, where: {parentId: "cG9zdDo4OQ=="}) {
+    menuItems(first: 100, where: {parentId: "${navId}"}) {
       nodes {
         uri
         label
@@ -99,8 +70,3 @@ export const getSightsPageNav = cache(async () => {
   );
   return data;
 });
-
-
-
-
-
