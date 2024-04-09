@@ -14,16 +14,16 @@ export default function RentHouses(props: any) {
           <div className="mask1 relative sm:w-[70%] sm:pt-[66%] w-full pt-[94%] md:pt-[50%] lg:pt-[45%] xl:pt-[40%] max-w-[36rem]">
             <Image
               src={`${props.homepageData.home.image.sourceUrl}`}
+              sizes="100vw"
               fill
               placeholder="blur"
               blurDataURL="data:..."
               priority
-              sizes="100vw"
               style={{
                 objectFit: "cover",
                 zIndex: -1,
               }}
-              alt={""}
+              alt="Afbeelding terlingerhoeve"
             />
           </div>
 

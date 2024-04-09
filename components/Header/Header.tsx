@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import * as Accordion from "@radix-ui/react-accordion";
 import { BsPlusLg } from "react-icons/bs";
 import { MdArrowRightAlt } from "react-icons/md";
+import Link from "next/link";
 
 export default function Header(props: any) {
   const [isOpen, setIsopen] = useState(false);
@@ -45,7 +46,7 @@ export default function Header(props: any) {
         </button>
       </div>
 
-      <div className="w-52 md:w-64">
+      <Link href="/" className="w-52 md:w-64">
         <Image
           src="/Header/logoTerlingerhoeve.svg"
           width={500}
@@ -53,7 +54,7 @@ export default function Header(props: any) {
           alt="Logo terlingerhoeve"
           title="Logo terlingerhoeve"
         />
-      </div>
+      </Link>
 
       <div className="flex justify-center items-center">
         {isOpen && (

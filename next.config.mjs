@@ -3,8 +3,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "terlingerhoeve.local",
+        protocol: "https",
+        hostname: "admin.terlingerhoeve.pixelplus.nl",
       },
     ],
   },
