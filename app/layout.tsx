@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import HeaderBase from "@/components/Header/HeaderBase";
 import Footer from "@/components/Footer/Footer";
+import HeaderBase from "@/components/Header/HeaderBase";
 
 const bricolage = localFont({
   src: [

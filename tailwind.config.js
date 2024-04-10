@@ -37,6 +37,18 @@ module.exports = {
           from: { opacity: 1 },
           to: { opacity: 0 },
         },
+
+        menuDown: {
+          from: {
+            transform: "translateY(-100px)",
+            opacity: 0,
+          },
+
+          to: {
+            transform: "translateY(0px)",
+            opacity: 1,
+          },
+        },
       },
 
       animation: {
@@ -44,6 +56,7 @@ module.exports = {
         slideUp: "slideUp 400ms ease-out",
         fadeIn: "fadeIn 200ms ease-out",
         fadeOut: "fadeOut 200ms ease-out",
+        menuDown: "menuDown 200ms ease-out",
       },
 
       backgroundImage: {

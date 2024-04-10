@@ -3,8 +3,6 @@ import Link from "next/link";
 import { getHolidayHomesPage } from "@/lib/getHolidayHomes";
 import HomeBlocks from "@/components/HolidayHomesPage/HomeBlocks";
 
-
-
 export default async function page() {
   const data = await getHolidayHomesPage();
 

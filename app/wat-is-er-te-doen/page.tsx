@@ -48,7 +48,9 @@ export default async function page() {
                 <h2 className="text-2xl md:text-3xl font-spartan uppercase lg:text-4xl">
                   {sight.title}
                 </h2>
-                <p className="max-w-xs text-lg mt-3 mx-auto">{sight.description}</p>
+                <p className="max-w-xs text-lg mt-3 mx-auto">
+                  {sight.description}
+                </p>
               </div>
             </Link>
           );

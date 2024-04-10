@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.backface-invisible {
+  backface-visibility: hidden;
+}
+
 .AccordionContent {
   overflow: hidden;
 }
