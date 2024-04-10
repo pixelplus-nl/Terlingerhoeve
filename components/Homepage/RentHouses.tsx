@@ -2,6 +2,7 @@ import Image from "next/image";
 import { HiMiniCheck } from "react-icons/hi2";
 import Link from "next/link";
 import UspSlider from "./UspSlider";
+import AnmButton from "../AnmButton";
 
 export default function RentHouses(props: any) {
   return (
@@ -29,14 +30,19 @@ export default function RentHouses(props: any) {
 
           <div className="mt-10 md:mt-0 max-w-xs xl:max-w-sm  flex flex-col justify-end">
             <div
-              className=" md:text-base lg:text-2xl font-medium innerHtmlStyle"
+              className=" md:text-base lg:text-2xl mb-3 font-medium innerHtmlStyle"
               dangerouslySetInnerHTML={{
                 __html: props.homepageData.home.paragraph,
               }}
             />
-            <button className="bg-[#B55A45] mt-5 text-[#fff] p-3 rounded-3xl w-fit">
-              De vakantiewoningen →
-            </button>
+            <Link className="w-fit" href="#">
+              <AnmButton
+                extraClasses={"bg-brown px-5 py-2"}
+                anmColor={"bg-lightGreen"}
+                buttonText="De vakantiewoningen"
+                scale={60}
+              />
+            </Link>
           </div>
         </div>
       </div>

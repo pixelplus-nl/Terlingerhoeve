@@ -72,10 +72,11 @@ export default function Reviews(props: any) {
         <Link
           target="_blank"
           href="https://www.google.com/search?sca_esv=8b8f87cd6e4eee81&rlz=1C5CHFA_enNL899NL899&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCua9MTYYT2VwAbjEovfxhCmBBVfyOwrqMtB4Ze-gMW5FaxU9QYz0Z8eO-I7A_lH_FIcNeJ9mvxHQr7c4FuT6fWQlFhQHG64dMWveXsgOipaUXWtX7W&si=AKbGX_oFio40EDpEiLGW5yb14kHbrhj0-kgJPotqLcIs2tFuH-lf9qSUw-tmPogP6P76oDxrpnMCymRdJVc6qMTWskXAmW9vjqbHaEtKU90DKR-u4AAbiqs%3D&q=Recreatie+Landgoed+Terlingerhoeve+Vakantiewoningen+Carre-Boerderij+Noorbeek+Zuid+Limburg+Reviews&sa=X&ved=2ahUKEwiy2L-w8vCEAxWR_7sIHamgBrYQ3PALegQIUhAF&biw=1920&bih=968&dpr=1"
-          className="font-medium group transition duration-800 ease-out">
-          <span className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-500 ease-out cursor-pointer">
-            <b>4,5/5</b> met <b>237</b> reviews →
+          className="flex gap-1 items-center group [&>span:nth-child(2)]:hover:translate-x-1 transition duration-800 ease-out">
+          <span className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer">
+            <b>4,5/5</b> met <b>237</b> reviews
           </span>
+          <span className="text-xl transition-all"> →</span>
         </Link>
       </div>
     </div>

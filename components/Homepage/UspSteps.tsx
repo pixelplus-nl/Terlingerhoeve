@@ -9,7 +9,7 @@ export default function UspSteps(props: any) {
           alt=""
           width={100}
           height={100}
-          className="w-18"
+          className="w-24 "
         />
         <p className="font-medium">{props.homepageData.home.uspstepone}</p>
       </div>
@@ -19,7 +19,7 @@ export default function UspSteps(props: any) {
           alt=""
           width={100}
           height={100}
-          className="w-18"
+          className="w-20 "
         />
         <p className="font-medium">{props.homepageData.home.uspsteptwo}</p>
       </div>
@@ -29,7 +29,7 @@ export default function UspSteps(props: any) {
           alt=""
           width={100}
           height={100}
-          className="w-18"
+          className="w-20"
         />
         <p className="font-medium">{props.homepageData.home.uspstepthree}</p>
       </div>

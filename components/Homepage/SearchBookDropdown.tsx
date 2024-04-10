@@ -26,7 +26,7 @@ export default function SearchBookDropdown(props: any) {
             <span className="text-sm pl-3">{props.label}</span>
           </Listbox.Label>
           <div className="relative">
-            <Listbox.Button className="relative w-full cursor-default rounded-3xl bg-white py-3.5 pl-3 pr-10 text-left text-gray-900  ring-1 ring-inset ring-[#556A76]/50">
+            <Listbox.Button className="relative cursor-pointer w-full rounded-3xl bg-white py-3.5 pl-3 pr-10 text-left text-gray-900  ring-1 ring-inset ring-[#556A76]/50">
               <span className="block truncate text-sm text-[#556A76]/50">
                 {selected.name}
               </span>

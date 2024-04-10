@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AnmButton from "../AnmButton";
 
 export default function FullWidthBgSection() {
   return (
@@ -28,10 +29,15 @@ export default function FullWidthBgSection() {
           <p className="drop-shadow-md text-center text-lg md:text-xl lg:text-2xl">
             Een Nederlands stukje buitenland
           </p>
-          <Link
-            href=""
-            className="bg-[#556A76] mx-auto p-3 lg:px-5 text-sm md:text-md lg:text-lg rounded-full">
-            Wat is er te doen? →
+          <Link href="#">
+            <AnmButton
+              extraClasses={
+                "bg-[#556A76] mx-auto p-3 lg:px-5 text-sm md:text-md lg:text-lg"
+              }
+              anmColor={"bg-lightGreen"}
+              buttonText="Wat is er te doen?"
+              scale={55}
+            />
           </Link>
         </div>
       </div>

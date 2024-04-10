@@ -36,13 +36,11 @@ export default function Header(props: any) {
       </div>
 
       <div className="md:w-40 w-auto hidden md:block">
-        <button className="flex gap-1 items-center group [&>span]:hover:translate-x-1 transition duration-800 ease-out">
-          <p className="inline-block h-6 lg:h-7 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer">
+        <button className="flex gap-1 items-center group [&>span:nth-child(2)]:hover:translate-x-1 transition duration-800 ease-out">
+          <span className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer">
             Reserveer online
-          </p>
-          <span className="transition-all">
-            <MdArrowRightAlt size={25} />
           </span>
+          <span className="transition-all text-xl"> →</span>
         </button>
       </div>
 
