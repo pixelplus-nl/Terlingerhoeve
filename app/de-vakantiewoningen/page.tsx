@@ -2,9 +2,13 @@ import SearchBookTile from "@/components/Homepage/SearchBookTile";
 import Link from "next/link";
 import { getHolidayHomesPage } from "@/lib/getHolidayHomes";
 import HomeBlocks from "@/components/HolidayHomesPage/HomeBlocks";
+import { fetchObjects } from "@/lib/rsv";
 
 export default async function page() {
   const data = await getHolidayHomesPage();
+
+  // Grabs the objects from the RSV "API"
+  const objects = await fetchObjects('7-6-2024', '14', '4', '1');
 
   return (
     <>
