@@ -8,7 +8,9 @@ export default async function page() {
   const data = await getHolidayHomesPage();
 
   // Grabs the objects from the RSV "API"
-  const objects = await fetchObjects('7-6-2024', '14', '4', '1');
+  const objects = await fetchObjects("7-6-2024", "14", "4", "1");
+
+  console.log(objects);
 
   return (
     <>
@@ -40,14 +42,16 @@ export default async function page() {
           <HomeBlocks />
         </div>
 
-        <div className="mt-16 px-5 lg:px-0 max-w-2xl mb-20 lg:mb-32 mx-auto text-blue">
-          <h2 className="text-2xl">{data.page.holiday_homes_page.title}</h2>
-          <div
-            className="mt-5 font-thin"
-            dangerouslySetInnerHTML={{
-              __html: data.page.holiday_homes_page.paragraph,
-            }}
-          />
+        <div className="bg-beige relative">
+          <div className="pt-16  px-5 lg:px-0 max-w-2xl pb-20 lg:pb-32 mx-auto text-blue">
+            <h2 className="text-2xl">{data.page.holiday_homes_page.title}</h2>
+            <div
+              className="mt-5 font-thin"
+              dangerouslySetInnerHTML={{
+                __html: data.page.holiday_homes_page.paragraph,
+              }}
+            />
+          </div>
         </div>
       </div>
     </>

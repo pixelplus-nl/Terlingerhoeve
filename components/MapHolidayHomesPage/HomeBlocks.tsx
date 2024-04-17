@@ -3,14 +3,18 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const variants = {
-  open: {
-    height: "auto",
-  },
-  closed: {
-    height: "0",
-  },
+const showBlocks = {
+  opacity: 1,
+  display: "block",
+  height: "auto",
 };
+
+const hideBlocks = {
+  opacity: 0,
+  height: 0,
+};
+
+//x
 
 export default function HomeBlocks(props: any) {
   const [viewAll, setViewAll] = useState(false);
@@ -38,11 +42,10 @@ export default function HomeBlocks(props: any) {
       </div>
 
       <motion.div
-        initial={"closed"}
-        variants={variants}
-        transition={{ duration: 1 }}
-        animate={viewAll ? "open" : "closed"}>
-        <div className="flex flex-col mt-10 pb-10 gap-10 m-auto">
+        initial={hideBlocks}
+        animate={viewAll ? showBlocks : hideBlocks}
+        transition={{ duration: 3, ease: "easeOut" }}>
+        <div className="flex flex-col mt-10 pb-10 gap-10 overflow-hidden m-auto">
           {props.data.page.map_holiday_homes_page.apartments
             .slice(3)
             .map((item: any, index: number) => (
