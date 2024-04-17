@@ -10,7 +10,6 @@ import { useIntersectionObserver } from "@uidotdev/usehooks";
 
 export default function Header(props: any) {
   const [isOpen, setIsOpen] = useState(false);
-  
 
   const toggleAnimation = () => {
     setIsOpen(!isOpen);
@@ -148,12 +147,16 @@ export default function Header(props: any) {
                         <Accordion.Header>
                           <Accordion.Trigger className="w-full AccordionTrigger flex gap-28 md:gap-40 justify-between items-center">
                             {index === 0 ? (
-                              <Link href="/" className="text-3xl lg:text-4xl">
+                              <Link
+                                href="/"
+                                onClick={toggleAnimation}
+                                className="text-3xl lg:text-4xl">
                                 {item.label}
                               </Link>
                             ) : index === 2 || index === 3 || index === 5 ? (
                               <Link
                                 href={item.uri}
+                                onClick={toggleAnimation}
                                 className="text-3xl lg:text-4xl">
                                 {item.label}
                               </Link>
@@ -177,7 +180,10 @@ export default function Header(props: any) {
                             {item.items.map((subItem: any, index: number) => {
                               return (
                                 <li key={index}>
-                                  <Link href={subItem.uri} className="text-xl">
+                                  <Link
+                                    href={subItem.uri}
+                                    onClick={toggleAnimation}
+                                     className="text-xl">
                                     {subItem.label}
                                   </Link>
                                 </li>
