@@ -10,6 +10,7 @@ import { useIntersectionObserver } from "@uidotdev/usehooks";
 
 export default function Header(props: any) {
   const [isOpen, setIsOpen] = useState(false);
+  
 
   const toggleAnimation = () => {
     setIsOpen(!isOpen);
@@ -35,6 +36,15 @@ export default function Header(props: any) {
     },
     closed: {
       scale: 0,
+    },
+  };
+
+  const variantsWrapper = {
+    open: {
+      display: "block",
+    },
+    closed: {
+      display: "none",
     },
   };
 
@@ -90,7 +100,16 @@ export default function Header(props: any) {
             />
           </Link>
 
-          <div className="absolute w-screen h-screen overflow-hidden max-h-screen top-0 left-0">
+          <motion.div
+            initial="closed"
+            variants={variantsWrapper}
+            animate={isOpen ? "open" : "closed"}
+            transition={{
+              duration: 1,
+              ease: "easeIn",
+              delay: isOpen ? 0 : 2,
+            }}
+            className="absolute w-screen h-screen overflow-hidden max-h-screen top-0 left-0">
             <motion.div
               initial="closed"
               variants={variants}
@@ -101,82 +120,78 @@ export default function Header(props: any) {
               transition={{
                 duration: 1,
                 ease: "easeIn",
-                delay: isOpen ? 0 : .5,
+                delay: isOpen ? 0 : 0.5,
               }}
               className="bg-lightGreen absolute  right-0 top-0 rounded-full  w-1 h-1"
             />
-          </div>
+          </motion.div>
 
-          <div className="absolute top-14 w-full left-0  z-20 px-5 md:top-0 md:left-0  md:flex-row-reverse md:gap-10 lg:gap-20 md:w-full md:h-screen  md:flex md:justify-center md:items-center text-[#fff]">
-            <motion.div
-              initial="closed"
-              variants={variantsContent}
-              animate={isOpen ? "open" : "closed"}
-              transition={{
-                duration: 1,
-                ease: "easeIn",
-                delay: isOpen ? 1 : 0,
-              }}>
-              <ul>
-                <Accordion.Root className="w-full" type="single" collapsible>
-                  {props.menuItems.map((item: any, index: number) => {
-                    return (
-                      <Accordion.Item
-                        value={`item-${index}`}
-                        className="pb-4"
-                        key={index}>
-                        <li>
-                          <Accordion.Header>
-                            <Accordion.Trigger className="w-full AccordionTrigger flex gap-28 md:gap-40 justify-between items-center">
-                              {index === 0 ? (
-                                <Link href="/" className="text-3xl lg:text-4xl">
-                                  {item.label}
-                                </Link>
-                              ) : index === 2 || index === 3 || index === 5 ? (
-                                <Link
-                                  href={item.uri}
-                                  className="text-3xl lg:text-4xl">
-                                  {item.label}
-                                </Link>
-                              ) : (
-                                <p className="text-3xl whitespace-nowrap lg:text-4xl">
-                                  {item.label}
-                                </p>
-                              )}
+          <motion.div
+            initial="closed"
+            variants={variantsContent}
+            animate={isOpen ? "open" : "closed"}
+            transition={{
+              duration: 1,
+              ease: "easeIn",
+              delay: isOpen ? 1 : 0,
+            }}
+            className="absolute flex-col top-14 w-full left-0  z-20 px-5 md:top-0 md:left-0  md:flex-row-reverse md:gap-10 lg:gap-20 md:w-full md:h-screen  md:flex md:justify-center md:items-center text-[#fff]">
+            <ul>
+              <Accordion.Root className="w-full" type="single" collapsible>
+                {props.menuItems.map((item: any, index: number) => {
+                  return (
+                    <Accordion.Item
+                      value={`item-${index}`}
+                      className="pb-4"
+                      key={index}>
+                      <li>
+                        <Accordion.Header>
+                          <Accordion.Trigger className="w-full AccordionTrigger flex gap-28 md:gap-40 justify-between items-center">
+                            {index === 0 ? (
+                              <Link href="/" className="text-3xl lg:text-4xl">
+                                {item.label}
+                              </Link>
+                            ) : index === 2 || index === 3 || index === 5 ? (
+                              <Link
+                                href={item.uri}
+                                className="text-3xl lg:text-4xl">
+                                {item.label}
+                              </Link>
+                            ) : (
+                              <p className="text-3xl whitespace-nowrap lg:text-4xl">
+                                {item.label}
+                              </p>
+                            )}
 
-                              <BsPlusLg
-                                size={25}
-                                className={`AccordionChevron transition-all origin-center ${
-                                  index === 1 || index === 4
-                                    ? "block"
-                                    : "hidden"
-                                }`}
-                                aria-hidden
-                              />
-                            </Accordion.Trigger>
-                          </Accordion.Header>
-                          <Accordion.Content className="AccordionContent radix-state-open:animate-slideDown radix-state-closed:animate-slideUp">
-                            <ul>
-                              {item.items.map((subItem: any, index: number) => {
-                                return (
-                                  <li key={index}>
-                                    <Link
-                                      href={subItem.uri}
-                                      className="text-xl">
-                                      {subItem.label}
-                                    </Link>
-                                  </li>
-                                );
-                              })}
-                            </ul>
-                          </Accordion.Content>
-                        </li>
-                      </Accordion.Item>
-                    );
-                  })}
-                </Accordion.Root>
-              </ul>
-            </motion.div>
+                            <BsPlusLg
+                              size={25}
+                              className={`AccordionChevron transition-all origin-center ${
+                                index === 1 || index === 4 ? "block" : "hidden"
+                              }`}
+                              aria-hidden
+                            />
+                          </Accordion.Trigger>
+                        </Accordion.Header>
+                        <Accordion.Content className="AccordionContent radix-state-open:animate-slideDown radix-state-closed:animate-slideUp">
+                          <ul>
+                            {item.items.map((subItem: any, index: number) => {
+                              return (
+                                <li key={index}>
+                                  <Link href={subItem.uri} className="text-xl">
+                                    {subItem.label}
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </Accordion.Content>
+                      </li>
+                    </Accordion.Item>
+                  );
+                })}
+              </Accordion.Root>
+            </ul>
+
             <motion.div
               initial="closed"
               variants={variantsContent}
@@ -196,7 +211,7 @@ export default function Header(props: any) {
                 className="w-72 md:w-80 lg:w-[30rem]"
               />
             </motion.div>
-          </div>
+          </motion.div>
 
           <div className="md:w-40 flex justify-end w-auto">
             <div
