@@ -11,8 +11,6 @@ import { useIntersectionObserver } from "@uidotdev/usehooks";
 export default function Header(props: any) {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(isOpen);
-
   const toggleAnimation = () => {
     setIsOpen(!isOpen);
   };
@@ -33,7 +31,7 @@ export default function Header(props: any) {
 
   const variants = {
     open: {
-      scale: 1000,
+      scale: 1200,
     },
     closed: {
       scale: 0,
@@ -141,7 +139,7 @@ export default function Header(props: any) {
                                   {item.label}
                                 </Link>
                               ) : (
-                                <p className="text-3xl lg:text-4xl">
+                                <p className="text-3xl whitespace-nowrap lg:text-4xl">
                                   {item.label}
                                 </p>
                               )}
