@@ -135,7 +135,7 @@ export default function Header(props: any) {
               delay: isOpen ? 1 : 0,
             }}
             className="absolute flex-col top-14 w-full left-0  z-20 px-5 md:top-0 md:left-0  md:flex-row-reverse md:gap-10 lg:gap-20 md:w-full md:h-screen  md:flex md:justify-center md:items-center text-[#fff]">
-            <ul>
+            <ul className="h-80 overflow-scroll">
               <Accordion.Root className="w-full" type="single" collapsible>
                 {props.menuItems.map((item: any, index: number) => {
                   return (
