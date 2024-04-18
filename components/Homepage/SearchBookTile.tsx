@@ -26,7 +26,7 @@ export default function SearchBookTile() {
         </div>
         <Link href="#">
           <AnmButton
-            extraClasses={"bg-lightGreen mx-auto p-5"}
+            extraClasses={"bg-lightGreen mx-auto w-fit p-5"}
             anmColor={"bg-brown"}
             buttonText="Zoek & boek"
             scale={40}

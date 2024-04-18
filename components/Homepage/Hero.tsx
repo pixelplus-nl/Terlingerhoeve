@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Hero() {
@@ -19,7 +22,10 @@ export default function Hero() {
           alt="Hero img"
           title="Hero img"
         />
-        <div className="hidden relative md:flex h-full justify-center ml-[25rem] lg:ml-[35rem] items-center">
+        <motion.div
+          animate={{ scale: [0, 1.1, 1], opacity: [0, 1] }}
+          transition={{ duration: 2, delay: 0.5 }}
+          className="hidden relative md:flex h-full justify-center ml-[25rem] lg:ml-[35rem] items-center">
           <Image
             src="/Shapes/HeroShape.svg"
             width={500}
@@ -27,8 +33,11 @@ export default function Hero() {
             alt="Hero shape"
             className=" w-72 lg:w-80"
           />
-          <div className="text-[#fff] absolute text-center">
-            <div className="max-w-[15rem] mt-14">
+          <motion.div
+            animate={{ y: [15, 0], opacity: [0, 1] }}
+            transition={{ duration: 1, delay: 2 }}
+            className="text-[#fff] absolute text-center">
+            <div className="max-w-[15rem] mt-6">
               <h1 className="text-3xl lg:text-4xl font-spartan">
                 LEKKER SAMEN EVEN WEG?
               </h1>
@@ -37,10 +46,13 @@ export default function Hero() {
                 <br /> Zuid-Limburg ben je er écht even tussenuit
               </h2>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-      <div className="md:hidden relative -mt-20 flex justify-center items-center">
+      <motion.div
+        animate={{ scale: [0, 1.1, 1], opacity: [0, 1] }}
+        transition={{ duration: 2, delay: 0.5 }}
+        className="md:hidden relative -mt-20 flex justify-center items-center">
         <Image
           src="/Shapes/HeroShape.svg"
           width={500}
@@ -48,15 +60,18 @@ export default function Hero() {
           alt="Hero shape"
           className="w-80 m-auto"
         />
-        <div className="text-[#fff] absolute text-center">
+        <motion.div
+          animate={{ y: [15, 0], opacity: [0, 1] }}
+          transition={{ duration: 1, delay: 2 }}
+          className="text-[#fff] absolute text-center">
           <div className="max-w-[15rem]">
             <h1 className="text-4xl font-spartan">LEKKER SAMEN EVEN WEG?</h1>
             <h2 className="text-lg mt-3">
               Op ons landgoed in Zuid-Limburg ben je er écht even tussenuit
             </h2>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
