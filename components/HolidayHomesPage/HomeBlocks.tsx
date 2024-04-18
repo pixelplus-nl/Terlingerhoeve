@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
+import { HiMiniCheck } from "react-icons/hi2";
+import AnmButton from "../AnmButton";
 
 const showBlocks = {
   opacity: 1,
@@ -27,41 +30,112 @@ const block = [
 
 //x
 
-export default function HomeBlocks() {
+export default function HomeBlocks(props: any) {
   const [viewAll, setViewAll] = useState(false);
 
   return (
     <>
-      <div className="flex flex-col gap-10 transition-all relative overflow-hidden">
-        {block.slice(0, 3).map((item: any, index: number) => {
+      <div className="flex flex-col p-5 gap-10 transition-all relative overflow-hidden">
+        {props.objects.slice(0, 3).map((item: any) => {
+          console.log(item);
           return (
-            <div key={index} className="flex gap-3 bg-brown w-full h-72"></div>
+            <div key={item.id} className=" p-8 shadow-tl rounded-3xl w-full ">
+              <h3 className="text-center text-2xl font-spartan pb-5 uppercase">
+                {item.name}
+              </h3>
+              <div className="flex gap-8">
+                <div className="w-[30rem] relative h-80">
+                  <Image
+                    src={item.image}
+                    fill
+                    placeholder="blur"
+                    blurDataURL="data:..."
+                    priority
+                    sizes="100vw"
+                    style={{
+                      objectFit: "cover",
+                      zIndex: -1,
+                    }}
+                    alt={""}
+                  />
+                </div>
+                <div className="flex flex-col w-full max-w-xs justify-end gap-3 text-blue">
+                  <div className="flex items-center gap-3">
+                    <div className="w-7 h-7 flex justify-center items-center rounded-full bg-[#D3DBCA]">
+                      <HiMiniCheck size={17} color="#6B7969" />
+                    </div>
+                    <p>Appartement</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-7 h-7 flex justify-center items-center rounded-full bg-[#D3DBCA]">
+                      <HiMiniCheck size={17} color="#6B7969" />
+                    </div>
+
+                    <p>Max. {item.max_people} personen</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-7 h-7 flex justify-center items-center rounded-full bg-[#D3DBCA]">
+                      <HiMiniCheck size={17} color="#6B7969" />
+                    </div>
+                    <p>
+                      {item.bedrooms} Slaapkamer{item.bedrooms > 1 ? "s" : ""}
+                    </p>
+                  </div>
+
+                  <hr className="border-dashed my-5" />
+
+                  <div className="flex justify-between mb-5 items-center">
+                    <p className="text-sm max-w-[10rem]">
+                      7-2-2024 t/m 8-2-2024 voor 1 persoon
+                    </p>
+                    <p className="text-2xl">€60</p>
+                  </div>
+
+                  <button>
+                    <AnmButton
+                      extraClasses={"bg-lightGreen mx-auto w-11/12 py-2"}
+                      anmColor={"bg-brown"}
+                      buttonText="Zoek & boek"
+                      scale={75}
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
           );
         })}
       </div>
 
-      <motion.div
-        initial={hideBlocks}
-        animate={viewAll ? showBlocks : hideBlocks}
-        transition={{ duration: 3, ease: "easeOut" }}>
-        <div className="flex flex-col pt-10 bg-beige gap-10 overflow-hidden m-auto">
-          {block.slice(3).map((item: any, index: number) => (
-            <div key={index} className="flex gap-3">
-              <div
-                key={index}
-                className="flex gap-3 bg-brown w-full h-72"></div>
+      {props.objects.length > 3 ? (
+        <>
+          <motion.div
+            initial={hideBlocks}
+            animate={viewAll ? showBlocks : hideBlocks}
+            transition={{ duration: 3, ease: "easeOut" }}>
+            <div className="flex flex-col pt-10 bg-beige gap-10 overflow-hidden m-auto">
+              {props.objects.slice(3).map((item: any, index: number) => (
+                <div key={index} className="flex gap-3">
+                  <div
+                    key={index}
+                    className="flex gap-3 bg-brown w-full h-72"></div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </motion.div>
+          </motion.div>
 
-      <div className="flex text-sm pt-10 bg-beige relative justify-center md:justify-start">
-        <button
-          onClick={() => setViewAll((viewAll) => !viewAll)}
-          className="text-[#fff] ml-7 w-fit px-3 py-2 rounded-full font-thin bg-brown">
-          {viewAll ? "Minder woningen bekijken ↑" : "Meer woningen bekijken ↓"}
-        </button>
-      </div>
+          <div className="flex text-sm pt-10 bg-beige relative justify-center md:justify-start">
+            <button
+              onClick={() => setViewAll((viewAll) => !viewAll)}
+              className="text-[#fff] ml-7 w-fit px-3 py-2 rounded-full font-thin bg-brown">
+              {viewAll
+                ? "Minder woningen bekijken ↑"
+                : "Meer woningen bekijken ↓"}
+            </button>
+          </div>
+        </>
+      ) : (
+        ""
+      )}
     </>
   );
 }

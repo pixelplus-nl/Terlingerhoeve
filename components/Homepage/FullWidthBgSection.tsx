@@ -32,7 +32,7 @@ export default function FullWidthBgSection() {
           <Link href="#">
             <AnmButton
               extraClasses={
-                "bg-[#556A76] mx-auto p-3 lg:px-5 text-sm md:text-md lg:text-lg"
+                "bg-[#556A76] w-fit mx-auto p-3 lg:px-5 text-sm md:text-md lg:text-lg"
               }
               anmColor={"bg-lightGreen"}
               buttonText="Wat is er te doen?"

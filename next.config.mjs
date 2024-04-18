@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "admin.terlingerhoeve.pixelplus.nl",
       },
+      {
+        protocol: "http",
+        hostname: "www.booking-plus.nl",
+      },
     ],
   },
 };

@@ -6,11 +6,15 @@ import { fetchObjects } from "@/lib/rsv";
 
 export default async function page() {
   const data = await getHolidayHomesPage();
+  const today = new Date();
+  const formattedDate = `${today.getDate()}-${
+    today.getMonth() + 1
+  }-${today.getFullYear()}`;
+
+
 
   // Grabs the objects from the RSV "API"
-  const objects = await fetchObjects("7-6-2024", "14", "4", "1");
-
-  console.log(objects);
+  const objects = await fetchObjects(`${formattedDate}`);
 
   return (
     <>
@@ -39,7 +43,7 @@ export default async function page() {
         </div>
 
         <div className="w-full px-5 lg:px-0 relative md:px-10 max-w-4xl mx-auto mt-10">
-          <HomeBlocks />
+          <HomeBlocks objects={objects} />
         </div>
 
         <div className="bg-beige relative">

@@ -29,7 +29,7 @@ export default function AnmButton(props: any) {
       ref={linkRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`whitespace-nowrap flex relative overflow-hidden gap-2 w-fit  mt-5 lg:mt-0 rounded-full  ${props.extraClasses} text-[#fff]`}>
+      className={`whitespace-nowrap  flex relative overflow-hidden gap-2  mt-5 lg:mt-0 rounded-full  ${props.extraClasses} text-[#fff]`}>
       <motion.div
         key={animationKey}
         initial={{ scale: 1 }}
@@ -42,7 +42,7 @@ export default function AnmButton(props: any) {
           top: `${mousePosition.y}px`,
           left: `${mousePosition.x}px`,
         }}></motion.div>
-      <span className="relative z-20">
+      <span className="relative z-20 mx-auto">
         {props.buttonText} <span className="text-xl">→</span>
       </span>
     </div>
