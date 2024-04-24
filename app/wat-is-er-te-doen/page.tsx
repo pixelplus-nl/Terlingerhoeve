@@ -40,7 +40,8 @@ export default async function page() {
                       objectFit: "cover",
                       zIndex: -1,
                     }}
-                    alt={""}
+                    alt={sightsData.page.title}
+                    title={sightsData.page.title}
                     className="group-hover:scale-110 transition-all"
                   />
                 </div>

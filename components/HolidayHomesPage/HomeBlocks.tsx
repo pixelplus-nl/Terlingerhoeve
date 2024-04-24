@@ -37,9 +37,10 @@ export default function HomeBlocks(props: any) {
     <>
       <div className="flex flex-col p-5 gap-10 transition-all relative overflow-hidden">
         {props.objects.slice(0, 3).map((item: any) => {
-          console.log(item);
           return (
-            <div key={item.id} className=" p-5 lg:p-8 shadow-tl rounded-3xl w-full ">
+            <div
+              key={item.id}
+              className=" p-5 lg:p-8 shadow-tl rounded-3xl w-full ">
               <h3 className="text-center text-2xl font-spartan !leading-7 pb-5 uppercase">
                 {item.name}
               </h3>
@@ -56,7 +57,8 @@ export default function HomeBlocks(props: any) {
                       objectFit: "cover",
                       zIndex: -1,
                     }}
-                    alt={""}
+                    alt={item.name}
+                    title={item.name}
                   />
                 </div>
                 <div className="flex flex-col w-full max-w-xs justify-end gap-3 text-blue">

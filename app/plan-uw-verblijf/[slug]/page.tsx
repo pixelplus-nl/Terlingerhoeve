@@ -49,7 +49,8 @@ export default async function page({ params }: PageProps) {
                   objectFit: "cover",
                   zIndex: -1,
                 }}
-                alt={""}
+                alt={data.page.title}
+                title={data.page.title}
               />
             </div>
           )}

@@ -21,8 +21,8 @@ export default function Hero() {
             zIndex: -1,
             backgroundPosition: "bottom",
           }}
-          alt="Hero img"
-          title="Hero img"
+          alt="Terlingerhoeve sfeer afbeelding"
+          title="Terlingerhoeve sfeer afbeelding"
         />
         <motion.div
           animate={{ scale: [0, 1.1, 1], opacity: [0, 1] }}
@@ -32,7 +32,7 @@ export default function Hero() {
             src="/Shapes/HeroShape.svg"
             width={500}
             height={500}
-            alt="Hero shape"
+            alt="Hero figuur"
             className=" w-72 lg:w-80"
           />
           <motion.div
@@ -59,7 +59,7 @@ export default function Hero() {
           src="/Shapes/HeroShape.svg"
           width={500}
           height={500}
-          alt="Hero shape"
+          alt="Hero figuur"
           className="w-80 m-auto"
         />
         <motion.div

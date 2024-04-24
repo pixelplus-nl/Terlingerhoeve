@@ -6,7 +6,9 @@ export default function Facilities(props: any) {
       {props.data.page.map_holiday_homes_page.facilitie.map(
         (facilitie: any, index: any) => {
           return (
-            <div key={index} className="text-blue flex mb-10 justify-between items-start">
+            <div
+              key={index}
+              className="text-blue flex mb-10 justify-between items-start">
               <div
                 className={`${
                   facilitie.bgcolorIcon === "green"
@@ -24,7 +26,8 @@ export default function Facilities(props: any) {
                     style={{
                       objectFit: "contain",
                     }}
-                    alt={""}
+                    alt={facilitie.titel}
+                    title={facilitie.titel}
                   />
                 </div>
               </div>
