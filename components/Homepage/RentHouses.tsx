@@ -11,7 +11,7 @@ export default function RentHouses(props: any) {
         <h2 className="font-spartan text-3xl md:text-4xl lg:text-5xl max-w-2xl mx-auto uppercase text-center">
           Een ontspannen verblijf in een prachtige omgeving
         </h2>
-        <div className="sm:flex flex-col md:flex-row md:gap-10 lg:gap-10 items-center md:items-end justify-center">
+        <div className="sm:flex flex-col md:flex-row md:gap-10 lg:gap-10 items-center md:items-center justify-center">
           <div className="mask1 relative sm:w-[70%] sm:pt-[66%] w-full pt-[94%] md:pt-[50%] lg:pt-[45%] xl:pt-[40%] max-w-[36rem]">
             <Image
               src={`${props.homepageData.home.image.sourceUrl}`}
@@ -30,7 +30,7 @@ export default function RentHouses(props: any) {
 
           <div className="mt-10 md:mt-0 max-w-xs xl:max-w-sm  flex flex-col justify-end">
             <div
-              className=" md:text-base lg:text-2xl mb-3 font-medium innerHtmlStyle"
+              className=" md:text-base lg:text-2xl mb-5 font-medium innerHtmlStyle"
               dangerouslySetInnerHTML={{
                 __html: props.homepageData.home.paragraph,
               }}

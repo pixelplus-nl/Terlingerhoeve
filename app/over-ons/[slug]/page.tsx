@@ -91,7 +91,7 @@ export default async function page({ params }: PageProps) {
                         }}></div>
                     </div>
                   ) : (
-                    <div className="py-5 md:py-10 md:px-0 px-3 max-w-2xl mx-auto flex justify-center w-full">
+                    <div className="py-5 md:py-10 md:px-0 font-thin px-3 max-w-2xl mx-auto flex justify-center w-full">
                       <div
                         dangerouslySetInnerHTML={{
                           __html: block.paragraph,
@@ -106,7 +106,7 @@ export default async function page({ params }: PageProps) {
             ) {
               return (
                 <div key={index} className="flex justify-center  ">
-                  <h2 className="font-spartan uppercase text-2xl md:text-3xl">
+                  <h2 className="font-spartan uppercase text-2xl !leading-7 md:text-3xl">
                     {block.subTitle}
                   </h2>
                 </div>

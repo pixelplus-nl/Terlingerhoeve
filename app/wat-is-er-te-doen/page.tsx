@@ -1,3 +1,4 @@
+import AnmButton from "@/components/AnmButton";
 import { getSightsPage } from "@/lib/getSightsPage";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +14,7 @@ export default async function page() {
           {sightsData.page.title}
         </h1>
         <div
-          className="text-center text-xl"
+          className="md:text-lg max-w-sm md:max-w-md text-center"
           dangerouslySetInnerHTML={{
             __html: sightsData.page.sightsGraph.description,
           }}
@@ -23,36 +24,48 @@ export default async function page() {
       <div className="grid mx-auto my-20 gap-16 max-w-[90rem] 2xl:px-0 md:grid-cols-2 px-5 md:px-10">
         {sights.map((sight: any, index: number) => {
           return (
-            <Link
-              href={sight.link.uri}
+            <div
               key={index}
               className="text-center  md:even:mt-40 flex items-center flex-col gap-5 md:gap-10 justify-start">
-              <div className="mask1 group relative cursor-pointer  sm:pt-[66%] w-full pt-[94%] md:pt-[90%] lg:pt-[80%] max-w-[36rem]">
-                <Image
-                  src={`${sight.featuredImage.sourceUrl}`}
-                  fill
-                  placeholder="blur"
-                  blurDataURL="data:..."
-                  priority
-                  sizes="100vw"
-                  style={{
-                    objectFit: "cover",
-                    zIndex: -1,
-                  }}
-                  alt={""}
-                  className="group-hover:scale-110 transition-all"
-                />
-              </div>
+              <Link href={sight.link.uri} className="w-full">
+                <div className="mask1 group relative cursor-pointer  sm:pt-[66%] w-full pt-[94%] md:pt-[90%] lg:pt-[80%] max-w-[36rem]">
+                  <Image
+                    src={`${sight.featuredImage.sourceUrl}`}
+                    fill
+                    placeholder="blur"
+                    blurDataURL="data:..."
+                    priority
+                    sizes="100vw"
+                    style={{
+                      objectFit: "cover",
+                      zIndex: -1,
+                    }}
+                    alt={""}
+                    className="group-hover:scale-110 transition-all"
+                  />
+                </div>
+              </Link>
 
               <div>
-                <h2 className="text-2xl md:text-3xl font-spartan uppercase lg:text-4xl">
+                <h2 className="text-2xl !leading-7 md:text-3xl font-spartan uppercase lg:text-4xl">
                   {sight.title}
                 </h2>
-                <p className="max-w-xs text-lg mt-3 mx-auto">
+                <p className="max-w-xs text-lg mt-3 mb-5 mx-auto">
                   {sight.description}
                 </p>
+
+                <Link
+                  className="mx-auto max-w-56 block w-full"
+                  href={sight.link.uri}>
+                  <AnmButton
+                    extraClasses={"bg-brown px-5 py-2"}
+                    anmColor={"bg-lightGreen"}
+                    buttonText={sight.title}
+                    scale={60}
+                  />
+                </Link>
               </div>
-            </Link>
+            </div>
           );
         })}
       </div>
