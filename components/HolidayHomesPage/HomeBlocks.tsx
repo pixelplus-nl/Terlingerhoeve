@@ -39,12 +39,12 @@ export default function HomeBlocks(props: any) {
         {props.objects.slice(0, 3).map((item: any) => {
           console.log(item);
           return (
-            <div key={item.id} className=" p-8 shadow-tl rounded-3xl w-full ">
-              <h3 className="text-center text-2xl font-spartan pb-5 uppercase">
+            <div key={item.id} className=" p-5 lg:p-8 shadow-tl rounded-3xl w-full ">
+              <h3 className="text-center text-2xl font-spartan !leading-7 pb-5 uppercase">
                 {item.name}
               </h3>
-              <div className="flex gap-8">
-                <div className="w-[30rem] relative h-80">
+              <div className="flex flex-col lg:flex-row gap-8">
+                <div className=" lg:w-[30rem] relative h-80">
                   <Image
                     src={item.image}
                     fill
@@ -94,7 +94,7 @@ export default function HomeBlocks(props: any) {
                   <button>
                     <AnmButton
                       extraClasses={"bg-lightGreen mx-auto w-11/12 py-2"}
-                      anmColor={"bg-brown"}
+                      anmColor={"bg-darkGreen"}
                       buttonText="Zoek & boek"
                       scale={75}
                     />

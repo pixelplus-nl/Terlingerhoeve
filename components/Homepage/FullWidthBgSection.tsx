@@ -26,7 +26,7 @@ export default function FullWidthBgSection() {
             Welkom in de
             <br /> zuid-limburgse heuvels
           </h2>
-          <p className="drop-shadow-md text-center text-lg md:text-xl lg:text-2xl">
+          <p className="drop-shadow-md text-center text-lg md:text-xl !leading-7 lg:text-2xl">
             Een Nederlands stukje buitenland
           </p>
           <Link href="#">

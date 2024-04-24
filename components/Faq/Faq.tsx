@@ -25,20 +25,18 @@ export default function Faq(props: any) {
   };
 
   return (
-    <div className="flex  flex-col gap-5 mb-10 max-w-lg">
+    <div className="md:grid grid-cols-2 flex flex-col gap-x-10 gap-y-5 mb-10">
       {props.data.map((item: any, index: number) => {
         return (
           <div
             key={index}
-            className="overflow-hidden relative border-brown/20 border-[1px] rounded-xl p-5">
+            className="overflow-hidden md:even:mt-10 h-fit w-full relative border-brown/20 border-[1px] rounded-xl p-5">
             <button
               onClick={() => toggleItem(index)}
               className="flex w-full text-left gap-5 items-center justify-between">
               <p>{item.question}</p>
               <div className="flex justify-center">
-                <div
-                  className="w-10 text-2xl"
-                  onClick={() => toggleItem(index)}>
+                <div className="w-10 text-2xl">
                   <span
                     className={`${
                       openItem[index] ? "rotate-90" : "rotate-0"
@@ -53,7 +51,7 @@ export default function Faq(props: any) {
               variants={variants}
               transition={{ duration: 1 }}
               animate={openItem[index] ? "open" : "closed"}>
-              <p className="text-sm pt-5">{item.answer}</p>
+              <p className="text-sm pt-5 font-medium">{item.answer}</p>
             </motion.div>
           </div>
         );

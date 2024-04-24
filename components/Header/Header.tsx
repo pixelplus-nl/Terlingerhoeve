@@ -7,9 +7,13 @@ import * as Accordion from "@radix-ui/react-accordion";
 import { BsPlusLg } from "react-icons/bs";
 import Link from "next/link";
 import { useIntersectionObserver } from "@uidotdev/usehooks";
+import { useMediaQuery } from "usehooks-ts";
 
 export default function Header(props: any) {
   const [isOpen, setIsOpen] = useState(false);
+  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isBetween = useMediaQuery("(max-width: 1024px)");
+  const isBig = useMediaQuery("(max-width: 1324px)");
 
   const toggleAnimation = () => {
     setIsOpen(!isOpen);
@@ -29,14 +33,41 @@ export default function Header(props: any) {
     rootMargin: "0px",
   });
 
-  const variants = {
-    open: {
-      scale: 1200,
-    },
-    closed: {
-      scale: 0,
-    },
-  };
+  const variants = isSmall
+    ? {
+        open: {
+          scale: 500,
+        },
+        closed: {
+          scale: 0,
+        },
+      }
+    : isBetween
+    ? {
+        open: {
+          scale: 800,
+        },
+        closed: {
+          scale: 0,
+        },
+      }
+    : isBig
+    ? {
+        open: {
+          scale: 1100,
+        },
+        closed: {
+          scale: 0,
+        },
+      }
+    : {
+        open: {
+          scale: 1300,
+        },
+        closed: {
+          scale: 0,
+        },
+      };
 
   const variantsWrapper = {
     open: {
@@ -71,13 +102,15 @@ export default function Header(props: any) {
         }   px-5 md:px-10 2xl:px-0 m-auto `}>
         <div className="max-w-[90rem] justify-between mx-auto flex items-center">
           <div className="bg-darkBeige w-12 h-12 flex justify-center items-center rounded-full md:hidden">
-            <Image
-              src="/Header/callIcon.svg"
-              width={25}
-              height={25}
-              alt="Bel icoon"
-              title="Bel icoon"
-            />
+            <Link href="tel:0434571806">
+              <Image
+                src="/Header/callIcon.svg"
+                width={25}
+                height={25}
+                alt="Bel icoon"
+                title="Bel icoon"
+              />
+            </Link>
           </div>
 
           <div className="md:w-40 w-auto hidden md:block">
@@ -104,7 +137,7 @@ export default function Header(props: any) {
             variants={variantsWrapper}
             animate={isOpen ? "open" : "closed"}
             transition={{
-              duration: 1,
+              duration: 0.7,
               ease: "easeIn",
               delay: isOpen ? 0 : 2,
             }}
@@ -117,7 +150,7 @@ export default function Header(props: any) {
                 transform.replace(" translateZ(0)", "")
               }
               transition={{
-                duration: 1,
+                duration: 0.7,
                 ease: "easeIn",
                 delay: isOpen ? 0 : 0.5,
               }}
@@ -130,12 +163,12 @@ export default function Header(props: any) {
             variants={variantsContent}
             animate={isOpen ? "open" : "closed"}
             transition={{
-              duration: 1,
+              duration: 0.7,
               ease: "easeIn",
               delay: isOpen ? 1 : 0,
             }}
             className="absolute flex-col top-14 w-full left-0  z-20 px-5 md:top-0 md:left-0  md:flex-row-reverse md:gap-10 lg:gap-20 md:w-full md:h-screen  md:flex md:justify-center md:items-center text-[#fff]">
-            <ul className="h-80 md:h-auto overflow-y-scroll overflow-x-hidden">
+            <ul className="h-auto overflow-x-hidden">
               <Accordion.Root className="w-full" type="single" collapsible>
                 {props.menuItems.map((item: any, index: number) => {
                   return (
@@ -150,19 +183,25 @@ export default function Header(props: any) {
                               <Link
                                 href="/"
                                 onClick={toggleAnimation}
-                                className="text-3xl lg:text-4xl">
-                                {item.label}
+                                className="text-3xl group lg:text-4xl">
+                                <span className="inline-block bg-left-bottom bg-gradient-to-r from-[#fff] to-[#fff] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer">
+                                  {item.label}
+                                </span>
                               </Link>
                             ) : index === 2 || index === 3 || index === 5 ? (
                               <Link
                                 href={item.uri}
                                 onClick={toggleAnimation}
-                                className="text-3xl lg:text-4xl">
-                                {item.label}
+                                className="text-3xl group lg:text-4xl">
+                                <span className="inline-block bg-left-bottom bg-gradient-to-r from-[#fff] to-[#fff] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer">
+                                  {item.label}
+                                </span>
                               </Link>
                             ) : (
-                              <p className="text-3xl whitespace-nowrap lg:text-4xl">
-                                {item.label}
+                              <p className="text-3xl group whitespace-nowrap lg:text-4xl">
+                                <span className="inline-block bg-left-bottom bg-gradient-to-r from-[#fff] to-[#fff] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px]  transition-all duration-500 ease-out cursor-pointer">
+                                  {item.label}
+                                </span>
                               </p>
                             )}
 
@@ -176,14 +215,14 @@ export default function Header(props: any) {
                           </Accordion.Trigger>
                         </Accordion.Header>
                         <Accordion.Content className="AccordionContent radix-state-open:animate-slideDown radix-state-closed:animate-slideUp">
-                          <ul>
+                          <ul className="pl-3 pt-3">
                             {item.items.map((subItem: any, index: number) => {
                               return (
-                                <li key={index}>
+                                <li className="group" key={index}>
                                   <Link
                                     href={subItem.uri}
                                     onClick={toggleAnimation}
-                                     className="text-xl">
+                                    className="text-xl font-thin inline-block bg-left-bottom bg-gradient-to-r from-[#fff] to-[#fff] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px]  transition-all duration-500 ease-out cursor-pointer">
                                     {subItem.label}
                                   </Link>
                                 </li>
@@ -219,20 +258,31 @@ export default function Header(props: any) {
             </motion.div>
           </motion.div>
 
-          <div className="md:w-40 flex justify-end w-auto">
+          <div className="flex justify-end w-auto">
             <div
-              className={`relative z-20 ${
-                isOpen ? "md:bg-lightGreen" : "md:bg-beige"
-              } w-12 h-12 flex justify-center items-center rounded-full ${
-                isOpen ? "bg-darkGreen/25" : "bg-darkBeige"
-              }`}>
-              <button onClick={toggleAnimation} className="relative">
-                <Hamburger
-                  toggle={setIsOpen}
-                  toggled={isOpen}
-                  color={`${isOpen ? "#fff" : "#B55A45"}`}
-                  size={23}
-                />
+              className={`relative z-20  flex justify-center items-center rounded-full`}>
+              <button
+                onClick={toggleAnimation}
+                className="relative items-center group flex">
+                <span
+                  className={`md:inline-block h-6 bg-left-bottom bg-gradient-to-r ${
+                    !isOpen ? "from-brown to-brown" : "from-[#fff] to-[#fff]"
+                  } bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] duration-500 ease-out hidden  transition-all ${
+                    isOpen ? "text-[#fff]" : "text-[#B55A45]"
+                  }`}>
+                  menu
+                </span>
+                <div
+                  className={`${
+                    isOpen ? "bg-lightGreen" : "bg-darkBeige"
+                  } rounded-full md:bg-[transparent]`}>
+                  <Hamburger
+                    toggle={setIsOpen}
+                    toggled={isOpen}
+                    color={`${isOpen ? "#fff" : "#B55A45"}`}
+                    size={23}
+                  />
+                </div>
               </button>
             </div>
           </div>

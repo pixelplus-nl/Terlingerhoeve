@@ -22,7 +22,7 @@ export default async function page() {
         <h1 className="font-spartan uppercase text-3xl md:text-4xl lg:text-5xl">
           De vakantiewoningen
         </h1>
-        <p className="text-sm md:text-base max-w-xs mt-5 md:max-w-md">
+        <p className="md:text-lg max-w-sm mt-5 md:max-w-md">
           Recreatie Landgoed Terlingerhoeve is verdeeld in afzonderlijke
           vakantiewoningen voor 2 tot 10 personen, gelegen aan de pittoreske
           binnenplaats of aan de ruimtelijke buitenkant van de hoeve. Benieuwd
@@ -42,13 +42,13 @@ export default async function page() {
           <SearchBookTile />
         </div>
 
-        <div className="w-full px-5 lg:px-0 relative md:px-10 max-w-4xl mx-auto mt-10">
+        <div className="w-full relative md:px-10 max-w-4xl mx-auto mt-10">
           <HomeBlocks objects={objects} />
         </div>
 
         <div className="bg-beige relative">
-          <div className="pt-16  px-5 lg:px-0 max-w-2xl pb-20 lg:pb-32 mx-auto text-blue">
-            <h2 className="text-2xl">{data.page.holiday_homes_page.title}</h2>
+          <div className="pt-10  px-5 lg:px-0 max-w-2xl pb-20 lg:pb-32 mx-auto text-blue">
+            <h2 className="text-2xl !leading-7">{data.page.holiday_homes_page.title}</h2>
             <div
               className="mt-5 font-thin"
               dangerouslySetInnerHTML={{

@@ -1,5 +1,7 @@
+import AnmButton from "@/components/AnmButton";
 import { Corinthia } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 
 const corinthia = Corinthia({
   weight: "400",
@@ -41,6 +43,7 @@ export default function page() {
         <form>
           <div className="flex justify-center">
             <textarea
+              required
               className="rounded-lg max-w-lg w-full h-40 p-3 focus:outline-none"
               placeholder="Wat kunnen we voor je doen?"
             />
@@ -50,37 +53,45 @@ export default function page() {
               <div className="flex w-full text-sm items-center justify-between">
                 <label htmlFor="name">Je naam</label>
                 <input
+                  required
                   type="text"
                   id="fname"
                   name="fname"
                   placeholder="Voor en achternaam"
-                  className="rounded-full px-3 py-2 sm:w-60"
+                  className="rounded-full px-3 py-2 outline-none sm:w-60"
                 />
               </div>
               <div className="flex w-full text-sm items-center justify-between">
                 <label htmlFor="name">E-mailadres</label>
                 <input
+                  required
                   type="text"
                   id="fname"
                   name="fname"
                   placeholder="voorbeeld@email.com"
-                  className="rounded-full px-3 py-2 sm:w-60"
+                  className="rounded-full px-3 py-2 outline-none sm:w-60"
                 />
               </div>
               <div className="flex w-full text-sm items-center justify-between">
                 <label htmlFor="name">Telefoonnummer</label>
                 <input
+                  required
                   type="text"
                   id="fname"
                   name="fname"
                   placeholder="06 00 00 00 00"
-                  className="rounded-full px-3 py-2 sm:w-60"
+                  className="rounded-full px-3 outline-none py-2 sm:w-60"
                 />
               </div>
             </div>
             <div className="flex w-full justify-center mt-8">
-              <button className="px-14 py-2 bg-darkGreen text-[#fff] rounded-full font-thin">
-                Verstuur nu →
+              <button type="submit">
+                <AnmButton
+                  extraClasses={"bg-darkGreen mx-auto w-fit px-5 py-2"}
+                  anmColor={"bg-lightGreen"}
+                  buttonText="Verstuur bericht"
+                  scale={47}
+                />
               </button>
             </div>
           </div>
@@ -96,9 +107,14 @@ export default function page() {
           className="mx-auto"
         />
         <div className="flex justify-center mt-5 md:mt-10">
-          <button className="bg-brown text-[#fff] rounded-full px-4 text-sm md:text-base py-2">
-            Bekijk je route via Google Maps →{" "}
-          </button>
+          <Link href="#">
+            <AnmButton
+              extraClasses={"bg-brown mx-auto w-fit px-5 py-2"}
+              anmColor={"bg-lightGreen"}
+              buttonText="Bekijk je route via Google Maps "
+              scale={60}
+            />
+          </Link>
         </div>
       </div>
     </>

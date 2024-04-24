@@ -54,9 +54,17 @@ export default function Footer() {
 
         <div className="grid grid-cols-2 mt-3 text-sm gap-y-1 max-w-sm mx-auto grid-rows-2 px-5">
           <p>Gulperstraat 5</p>
-          <a href="tel:0434571806">+31 (0)43 457 18 06</a>
+          <a className="group" href="tel:0434571806">
+            <span className="inline-block pr-2 h-5 bg-left-bottom bg-gradient-to-r from-brown/50 to-brown/50 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer">
+              +31 (0)43 457 18 06
+            </span>
+          </a>
           <p>6255 NX Noorbeek</p>
-          <a href="mailto:info@terlingerhoeve.nl">info@terlingerhoeve.nl</a>
+          <a className="group" href="mailto:info@terlingerhoeve.nl">
+            <span className="inline-block pr-2 h-5 bg-left-bottom bg-gradient-to-r from-brown/50 to-brown/50 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer">
+              info@terlingerhoeve.nl
+            </span>
+          </a>
         </div>
         <div className="px-5 md:px-10 py-10 sm:py-16">
           <h3 className="text-3xl font-spartan uppercase text-center">
@@ -64,13 +72,13 @@ export default function Footer() {
           </h3>
           <div className="flex justify-center gap-3 mt-3">
             <SocialIcon
-              className="border-2 rounded-full"
+              className="border-2 socialIcon rounded-full"
               bgColor="#F2EEE7"
               fgColor="#B55A45"
               url="https://www.instagram.com/terlingerhoeve/"
             />
             <SocialIcon
-              className="border-2 rounded-full"
+              className="border-2 socialIcon rounded-full"
               bgColor="#F2EEE7"
               fgColor="#B55A45"
               url="https://www.facebook.com/terlingerhoeve"
@@ -79,27 +87,54 @@ export default function Footer() {
         </div>
         <div className="lg:flex gap-10 px-5 md:px-10 2xl:px-0 max-w-[90rem]">
           <ul className="font-thin flex flex-wrap gap-3 md:gap-5 justify-center">
-            <li>
-              <Link href="">Veelgestelde vragen</Link>
+            <li className="group">
+              <Link
+                className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
+                href="">
+                Veelgestelde vragen
+              </Link>
             </li>
-            <li>
-              <Link href="">Huisregels</Link>
+            <li className="group">
+              <Link
+                className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
+                href="">
+                Huisregels
+              </Link>
             </li>
-            <li>
-              <Link href="">Voorwaarden</Link>
+            <li className="group">
+              <Link
+                className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
+                href="">
+                Voorwaarden
+              </Link>
             </li>
-            <li>
-              <Link href="">Privacyverklaring</Link>
+            <li className="group">
+              <Link
+                className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
+                href="">
+                Privacyverklaring
+              </Link>
             </li>
-            <li>
-              <Link href="">Cookies</Link>
+            <li className="group">
+              <Link
+                className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
+                href="">
+                Cookies
+              </Link>
             </li>
-            <li>
-              <Link href="">Colofon</Link>
+            <li className="group">
+              <Link
+                className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer"
+                href="">
+                Colofon
+              </Link>
             </li>
           </ul>
-          <Link className="mt-10 lg:mt-0 block text-center" href="">
-            Alle contactgegevens →
+          <Link className="mt-10 group lg:mt-0 block text-center" href="">
+            <span className="inline-block pr-2 h-6 bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out cursor-pointer">
+              Alle contactgegevens
+            </span>
+            →
           </Link>
         </div>
       </div>
