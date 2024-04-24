@@ -1,8 +1,6 @@
 import Link from "next/link";
 import SearchBookDropdown from "./SearchBookDropdown";
 import AnmButton from "../AnmButton";
-<<<<<<< Updated upstream
-=======
 import TlDatePicker from "../TlDatePicker";
 
 const verblijfsduur = [
@@ -57,7 +55,6 @@ const slaapkamers = [
   { option: "minimaal 4" },
   { option: "minimaal 5" },
 ];
->>>>>>> Stashed changes
 
 export default function SearchBookTile() {
   return (
@@ -68,31 +65,20 @@ export default function SearchBookTile() {
           <br className="hidden lg:block" /> vakantiewoning
         </h2>
         <div className="grid grid-cols-2 max-w-sm lg:max-w-none mx-auto lg:grid-rows-1 lg:grid-cols-4 grid-rows-2 gap-3 mt-3 lg:mt-0">
-<<<<<<< Updated upstream
-=======
           <div className="flex w-full">
             <TlDatePicker />
           </div>
->>>>>>> Stashed changes
           <div>
-            <SearchBookDropdown label="Aankomst" />
-          </div>
-          <div>
-            <SearchBookDropdown label="Verblijfsduur" />
-          </div>
-          <div>
-<<<<<<< Updated upstream
-            <SearchBookDropdown label="Personen" />
-          </div>
-          <div>
-            <SearchBookDropdown label="Slaapkamers" />
-=======
-            {" "}
             <SearchBookDropdown
-              label="Slaapkamer(s)"
-              dropdown={slaapkamers}
-            />{" "}
->>>>>>> Stashed changes
+              label="Verblijfsduur"
+              dropdown={verblijfsduur}
+            />
+          </div>
+          <div>
+            <SearchBookDropdown label="personen" dropdown={personen} />
+          </div>
+          <div>
+            <SearchBookDropdown label="Slaapkamer(s)" dropdown={slaapkamers} />
           </div>
         </div>
         <Link href="#">
