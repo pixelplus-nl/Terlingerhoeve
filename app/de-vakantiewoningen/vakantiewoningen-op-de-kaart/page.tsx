@@ -23,7 +23,8 @@ export default async function page() {
                 objectFit: "cover",
                 zIndex: -1,
               }}
-              alt={""}
+              alt="vakantiewoningen op de kaart"
+              title="vakantiewoningen op de kaart"
             />
           </div>
         </div>

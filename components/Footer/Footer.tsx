@@ -17,21 +17,24 @@ export default function Footer() {
           src="/Footer/FooterImgOne.png"
           width={500}
           height={500}
-          alt="Footer image"
+          alt="Footer afbeelding terlingerhoeve"
+          title="Footer afbeelding terlingerhoeve"
           className="grow w-44 sm:w-80 lg:w-[27rem] xl:w-[35rem]"
         />
         <Image
           src="/Footer/FooterImgTwo.png"
           width={500}
           height={500}
-          alt="Footer image"
+          alt="Footer afbeelding terlingerhoeve"
+          title="Footer afbeelding terlingerhoeve"
           className=" grow w-44 sm:w-80 lg:w-[27rem] xl:w-[35rem]"
         />
         <Image
           src="/Footer/FooterImgThree.png"
           width={500}
           height={500}
-          alt="Footer image"
+          alt="Footer afbeelding terlingerhoeve"
+          title="Footer afbeelding terlingerhoeve"
           className="grow w-44 sm:w-80 lg:w-[27rem] xl:w-[35rem]"
         />
       </div>
@@ -41,7 +44,8 @@ export default function Footer() {
           src="/Footer/Footerlogo.svg"
           width={300}
           height={300}
-          alt="Footer logo"
+          alt="Footer logo terlingerhoeve"
+          title="Footer logo terlingerhoeve"
           className="w-44 sm:w-60"
         />
         <hr className="h-[1px] w-full bg-brown" />

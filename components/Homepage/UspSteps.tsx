@@ -6,7 +6,7 @@ export default function UspSteps(props: any) {
       <div className="flex flex-col gap-5">
         <Image
           src="/Icons/HomepageIconS1.svg"
-          alt=""
+          alt="usp icoon"
           width={100}
           height={100}
           className="w-24 "
@@ -16,7 +16,7 @@ export default function UspSteps(props: any) {
       <div className="flex flex-col gap-5 ml-5 sm:ml-0 sm:mt-10">
         <Image
           src="/Icons/HomepageIconS2.svg"
-          alt=""
+          alt="usp icoon"
           width={100}
           height={100}
           className="w-20 "
@@ -26,7 +26,7 @@ export default function UspSteps(props: any) {
       <div className="flex flex-col gap-5 ml-10 sm:ml-0 sm:mt-20">
         <Image
           src="/Icons/HomepageIconS3.svg"
-          alt=""
+          alt="usp icoon"
           width={100}
           height={100}
           className="w-20"
