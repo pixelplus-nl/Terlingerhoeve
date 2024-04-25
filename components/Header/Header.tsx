@@ -244,7 +244,7 @@ export default function Header(props: any) {
               transition={{
                 duration: 1,
                 ease: "easeIn",
-                delay: isOpen ? 1 : 0,
+                delay: isOpen ? 0.5 : 0,
               }}
               className="flex justify-center mt-5 md:mt-0">
               <Image
@@ -258,7 +258,7 @@ export default function Header(props: any) {
             </motion.div>
           </motion.div>
 
-          <div className="flex justify-end w-auto">
+          <div className="flex justify-end w-auto md:w-40">
             <div
               className={`relative z-20  flex justify-center items-center rounded-full`}>
               <button
