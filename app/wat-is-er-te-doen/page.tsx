@@ -27,7 +27,7 @@ export default async function page() {
             <div
               key={index}
               className="text-center  md:even:mt-40 flex items-center flex-col gap-5 md:gap-10 justify-start">
-              <Link href={sight.link.uri} className="w-full">
+              <Link href={sight.link.uri} className="w-full flex justify-center">
                 <div className="mask1 group relative cursor-pointer  sm:pt-[66%] w-full pt-[94%] md:pt-[90%] lg:pt-[80%] max-w-[36rem]">
                   <Image
                     src={`${sight.featuredImage.sourceUrl}`}
