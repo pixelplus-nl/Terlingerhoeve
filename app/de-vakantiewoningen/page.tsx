@@ -11,8 +11,6 @@ export default async function page() {
     today.getMonth() + 1
   }-${today.getFullYear()}`;
 
-
-
   // Grabs the objects from the RSV "API"
   const objects = await fetchObjects(`${formattedDate}`);
 
@@ -30,7 +28,7 @@ export default async function page() {
           <Link
             className="group ease-out duration-700"
             href="/de-vakantiewoningen/vakantiewoningen-op-de-kaart">
-            <span className="inline-block h-5 bg-left-bottom bg-gradient-to-r from-brown/50 to-brown/50 bg-[length:100%_2px] bg-no-repeat group-hover:bg-[length:0%_2px] transition-all duration-500 ease-out cursor-pointer">
+            <span className="inline-block h-6 bg-left-bottom bg-gradient-to-r from-brown/50 to-brown/50 bg-[length:100%_2px] bg-no-repeat group-hover:bg-[length:0%_2px] transition-all duration-500 ease-out cursor-pointer">
               Bekijk ze op de kaart →
             </span>
           </Link>
@@ -48,7 +46,9 @@ export default async function page() {
 
         <div className="bg-beige relative">
           <div className="pt-10  px-5 lg:px-0 max-w-2xl pb-20 lg:pb-32 mx-auto text-blue">
-            <h2 className="text-2xl !leading-7">{data.page.holiday_homes_page.title}</h2>
+            <h2 className="text-2xl !leading-7">
+              {data.page.holiday_homes_page.title}
+            </h2>
             <div
               className="mt-5 font-thin"
               dangerouslySetInnerHTML={{
