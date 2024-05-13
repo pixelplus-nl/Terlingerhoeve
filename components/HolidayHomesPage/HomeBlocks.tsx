@@ -102,6 +102,11 @@ export default function HomeBlocks(props: any) {
                       anmColor={"bg-darkGreen"}
                       buttonText="Zoek & boek"
                       scale={75}
+                      onClick={() => {
+
+                        // Redirect to item.reservation_url
+                        window.location = item.reservation_url;
+                      }}
                     />
                   </button>
                 </div>
