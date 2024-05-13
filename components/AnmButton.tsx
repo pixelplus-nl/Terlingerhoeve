@@ -29,6 +29,7 @@ export default function AnmButton(props: any) {
       ref={linkRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={props.onClick ? props.onClick : () => {}}
       className={`whitespace-nowrap  flex relative overflow-hidden gap-2  mt-5 lg:mt-0 rounded-full  ${props.extraClasses} text-[#fff]`}>
       <motion.div
         key={animationKey}

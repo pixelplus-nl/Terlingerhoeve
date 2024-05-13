@@ -5,8 +5,12 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function TlDatePicker() {
-  const [startDate, setStartDate] = useState<Date | null>(new Date());
+export default function TlDatePicker(props: any) {
+
+  const nextFriday = new Date();
+  nextFriday.setDate(nextFriday.getDate() + ((5 - nextFriday.getDay() + 7) % 7));
+
+  const [startDate, setStartDate] = useState<Date | null>(nextFriday);
   const formatWeekDayToDutch = (nameOfDay: string) => {
     const weekdaysInDutch: { [key: string]: string } = {
       Sunday: "Zo",
@@ -30,7 +34,15 @@ export default function TlDatePicker() {
         minDate={new Date()}
         toggleCalendarOnIconClick
         icon={<span>↓</span>}
-        onChange={(date) => setStartDate(date)}
+        onChange={(date: Date) => {
+          setStartDate(date)
+
+          const formattedDate = `${date.getDate()}-${
+            date.getMonth() + 1
+          }-${date.getFullYear()}`;
+
+          props.setArrivalDate(formattedDate);
+        }}
         popperPlacement="bottom-start"
         formatWeekDay={formatWeekDayToDutch}
       />

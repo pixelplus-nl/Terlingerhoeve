@@ -37,6 +37,9 @@ export default function HomeBlocks(props: any) {
     <>
       <div className="flex flex-col p-5 gap-10 transition-all relative overflow-hidden">
         {props.objects.slice(0, 3).map((item: any) => {
+
+          const number_of_people = item.number_of_people !== "" ? item.number_of_people : item.max_people;
+
           return (
             <div
               key={item.id}
@@ -88,7 +91,7 @@ export default function HomeBlocks(props: any) {
 
                   <div className="flex justify-between mb-5 items-center">
                     <p className="text-sm max-w-[10rem]">
-                      7-2-2024 t/m 8-2-2024 voor 1 persoon
+                      {item.arrival_date} t/m {item.departure_date} voor {number_of_people} perso{number_of_people > 1 ? "nen" : "on"}
                     </p>
                     <p className="text-2xl">€60</p>
                   </div>
