@@ -5,6 +5,7 @@ import Link from "next/link";
 import SearchBookDropdown from "./SearchBookDropdown";
 import AnmButton from "../AnmButton";
 import TlDatePicker from "../TlDatePicker";
+import { useRouter } from 'next/navigation';
 
 const verblijfsduur = [
   { option: "Weekend | vr t/m ma", value: "weekend"},
@@ -61,6 +62,27 @@ const slaapkamers = [
 
 export default function SearchBookTile(props: any) {
 
+  const router = useRouter()
+
+  const nextFriday = new Date();
+  nextFriday.setDate(nextFriday.getDate() + ((5 - nextFriday.getDay() + 7) % 7));
+  const formattedDate = `${nextFriday.getDate()}-${
+    nextFriday.getMonth() + 1
+  }-${nextFriday.getFullYear()}`;
+
+  const [arrivalDate, setArrivalDate] = useState(props.arrivalDate ? props.arrivalDate : formattedDate);
+  const [stayLength, setStayLength] = useState(props.stayLength ? props.stayLength : "weekend");
+  const [amountOfPeople, setAmountOfPeople] = useState(props.amountOfPeople ? props.amountOfPeople : "1");
+  const [bedrooms, setBedrooms] = useState(props.bedrooms ? props.bedrooms : "1");
+
+  const handleSubmit = (e: any) => {
+    
+    e.preventDefault();
+
+    // Use new app router
+    router.push('/de-vakantiewoningen?arrival_date=' + arrivalDate + '&stay_length=' + stayLength + '&amount_of_people=' + amountOfPeople + '&bedrooms=' + bedrooms);
+  }
+
   return (
     <div className="flex justify-center relative z-20">
       <div className="bg-[#fff] items-center w-full mt-3  px-5 lg:px-10 lg:mx-5 xl:mx-0 rounded-3xl lg:rounded-full gap-8  py-5 lg:flex  justify-between text-[#556A76]">
@@ -70,27 +92,27 @@ export default function SearchBookTile(props: any) {
         </h2>
         <div className="grid grid-cols-2 max-w-sm lg:max-w-none mx-auto lg:grid-rows-1 lg:grid-cols-4 grid-rows-2 gap-3 mt-3 lg:mt-0">
           <div className="flex w-full">
-            <TlDatePicker setArrivalDate={props.setArrivalDate ? props.setArrivalDate : () => {}} />
+            <TlDatePicker arrivalDate={props.arrivalDate ? props.arrivalDate : arrivalDate} setArrivalDate={props.setArrivalDate ? props.setArrivalDate : setArrivalDate} />
           </div>
           <div>
             <SearchBookDropdown
               label="Verblijfsduur"
               dropdown={verblijfsduur}
-              setValue={props.setStayLength ? props.setStayLength : () => {}}
+              setValue={props.setStayLength ? props.setStayLength : setStayLength}
             />
           </div>
           <div>
             <SearchBookDropdown
               label="personen"
               dropdown={personen}
-              setValue={props.setAmountOfPeople ? props.setAmountOfPeople : () => {}}
+              setValue={props.setAmountOfPeople ? props.setAmountOfPeople : setAmountOfPeople}
             />
           </div>
           <div>
             <SearchBookDropdown
               label="Slaapkamer(s)"
               dropdown={slaapkamers}
-              setValue={props.setBedrooms ? props.setBedrooms : () => {}}
+              setValue={props.setBedrooms ? props.setBedrooms : setBedrooms}
             />
           </div>
         </div>
@@ -100,8 +122,14 @@ export default function SearchBookTile(props: any) {
             anmColor={"bg-darkGreen"}
             buttonText="Zoek & boek"
             scale={40}
-            onClick={() => {
-              props.fetchObjects && props.fetchObjects();
+            onClick={(e: any) => {
+
+              if (props.fetchObjects)
+                props.fetchObjects();
+              else {
+
+                handleSubmit(e);
+              }
             }}
           />
         </Link>

@@ -6,9 +6,11 @@ import { getHolidayHomesPage } from "@/lib/getHolidayHomes";
 import HomeBlocks from "@/components/HolidayHomesPage/HomeBlocks";
 import { fetchObjects } from "@/lib/rsv";
 import React, { useState } from "react";
+import { useSearchParams, useRouter } from 'next/navigation'
 
 export default function page(props: any) {
   const data = props.data;
+  const router = useRouter();
 
   const nextFriday = new Date();
   nextFriday.setDate(nextFriday.getDate() + ((5 - nextFriday.getDay() + 7) % 7));
@@ -16,10 +18,13 @@ export default function page(props: any) {
     nextFriday.getMonth() + 1
   }-${nextFriday.getFullYear()}`;
 
-  const [arrivalDate, setArrivalDate] = useState(formattedDate);
-  const [stayLength, setStayLength] = useState("weekend");
-  const [amountOfPeople, setAmountOfPeople] = useState("1");
-  const [bedrooms, setBedrooms] = useState("1");
+  // Get current searchParams
+  const searchParams = useSearchParams();
+
+  const [arrivalDate, setArrivalDate] = useState(searchParams.get('arrival_date') ? searchParams.get('arrival_date') : formattedDate);
+  const [stayLength, setStayLength] = useState(searchParams.get('stay_length') ? searchParams.get('stay_length') : "weekend");
+  const [amountOfPeople, setAmountOfPeople] = useState(searchParams.get('amount_of_people') ? searchParams.get('amount_of_people') : "1");
+  const [bedrooms, setBedrooms] = useState(searchParams.get('bedrooms') ? searchParams.get('bedrooms') : "1");
   const [objects, setObjects] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -48,6 +53,9 @@ export default function page(props: any) {
     const data = await resource.json();
 
     setObjects(data);
+
+    if (loaded)
+      router.push('/de-vakantiewoningen?arrival_date=' + arrivalDate + '&stay_length=' + stayLength + '&amount_of_people=' + amountOfPeople + '&bedrooms=' + bedrooms);
 
     if (loaded)
       setIsLoading(false);

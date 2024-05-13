@@ -7,10 +7,16 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function TlDatePicker(props: any) {
 
-  const nextFriday = new Date();
-  nextFriday.setDate(nextFriday.getDate() + ((5 - nextFriday.getDay() + 7) % 7));
-
-  const [startDate, setStartDate] = useState<Date | null>(nextFriday);
+  const [startDate, setStartDate] = useState<Date | null>(
+    props.arrivalDate ? 
+      new Date(
+        props.arrivalDate.split("-")[2] + "-" + 
+        props.arrivalDate.split("-")[1] + "-" +
+        props.arrivalDate.split("-")[0]
+      )
+    :
+      new Date()
+    );
   const formatWeekDayToDutch = (nameOfDay: string) => {
     const weekdaysInDutch: { [key: string]: string } = {
       Sunday: "Zo",
