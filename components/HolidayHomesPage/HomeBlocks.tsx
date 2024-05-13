@@ -93,7 +93,7 @@ export default function HomeBlocks(props: any) {
                     <p className="text-sm max-w-[10rem]">
                       {item.arrival_date} t/m {item.departure_date} voor {number_of_people} perso{number_of_people > 1 ? "nen" : "on"}
                     </p>
-                    <p className="text-2xl">€60</p>
+                    <p className="text-2xl">€{item.price}</p>
                   </div>
 
                   <button>
