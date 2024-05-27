@@ -8,7 +8,7 @@ import { fetchObjects } from "@/lib/rsv";
 import React, { useState } from "react";
 import { useSearchParams, useRouter } from 'next/navigation'
 
-export default function page(props: any) {
+export default function Page(props: any) {
   const data = props.data;
   const router = useRouter();
 
