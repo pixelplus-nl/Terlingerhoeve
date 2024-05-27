@@ -11,8 +11,16 @@ function classNames(...classes: any) {
 export default function SearchBookDropdown(props: any) {
   const [selected, setSelected] = useState(props.dropdown[0]);
 
+  const updateSelected = (selected: any) => {
+    setSelected(selected);
+    props.setValue && props.setValue(selected.value);
+  }
+
   return (
-    <Listbox value={selected} onChange={setSelected}>
+    <Listbox
+      value={selected}
+      onChange={updateSelected}
+    >
       {({ open }) => (
         <>
           <Listbox.Label>
