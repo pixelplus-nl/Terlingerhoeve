@@ -24,6 +24,10 @@ export const getSightsPage = cache(async () => {
       }
     }
     title
+    seo{
+      title
+      metaDesc
+    }
   }
 }`
   );

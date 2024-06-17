@@ -21,6 +21,10 @@ export const getHomePage = cache(async () => {
             reviewer
           }
         }
+        seo{
+          title
+          metaDesc
+        }
       }
     }
   }
